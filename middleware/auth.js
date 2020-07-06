@@ -17,7 +17,7 @@ module.exports = (req, res, next) => {
     //     iat: 1234,
     //     exp: 1234
     // }
-    console.log(decoded.user);
+    // console.log(decoded.user);
     req.user = decoded.user;
   } catch (err) {
     console.error();
