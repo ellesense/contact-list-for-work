@@ -1,9 +1,10 @@
 const express = require("express");
 const router = express.Router();
+const auth = require("../middleware/auth");
 
 // GET => api/contacts
 // Get all contacts for a signed in user
-router.get("/", (req, res) => {
+router.get("/", auth, (req, res) => {
   res.send({ msg: "hi from users route" });
 });
 

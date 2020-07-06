@@ -8,7 +8,7 @@ app.use(express.json({ extended: false }));
 
 app.use("/api/auth", require("./routes/auth"));
 app.use("/api/users", require("./routes/users"));
-app.use("/api/contact", require("./routes/contacts"));
+app.use("/api/contacts", require("./routes/contacts"));
 
 app.get("/", (req, res) => {
   res.send({ msg: "Hello from backend." });
