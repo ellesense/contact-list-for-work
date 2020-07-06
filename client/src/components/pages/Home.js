@@ -1,14 +1,13 @@
 import React from "react";
+import Contacts from "../contacts/Contacts";
+import ContactForm from "../contacts/ContactForm";
 
 const Home = () => {
   return (
     <div>
       <h1>Home</h1>
-      <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore
-        debitis molestiae voluptate vero accusantium ipsam provident assumenda
-        ducimus, tempora unde?
-      </p>
+      <ContactForm />
+      <Contacts />
     </div>
   );
 };
