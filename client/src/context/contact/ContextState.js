@@ -31,7 +31,6 @@ const ContactState = (props) => {
       type: DELETE_CONTACT,
       payload: contact_id,
     });
-    console.log(contact_id);
   };
 
   // Update an existing contact

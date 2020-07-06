@@ -14,7 +14,9 @@ const ContactItem = ({ contact }) => {
     <div>
       <div className={styles.card}>
         <div className={styles.container}>
-          <span onClick={onDelete}>[x]</span>
+          <span className={styles.deleteBtn}>
+            <i className="fa fa-trash" onClick={onDelete}></i>
+          </span>
           <section>
             <p id={styles.organizationName}>{name}</p>
             <p>
