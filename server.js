@@ -4,6 +4,8 @@ const connectDB = require("./config/db");
 
 connectDB();
 
+app.use(express.json({ extended: false }));
+
 app.use("/api/auth", require("./routes/auth"));
 app.use("/api/users", require("./routes/users"));
 app.use("/api/contact", require("./routes/contacts"));
