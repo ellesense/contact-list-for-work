@@ -1,6 +1,10 @@
 const express = require("express");
 const app = express();
 
+app.use("/api/auth", require("./routes/auth"));
+app.use("/api/users", require("./routes/users"));
+app.use("/api/contact", require("./routes/contacts"));
+
 app.get("/", (req, res) => {
   res.send({ msg: "Hello from backend." });
 });
