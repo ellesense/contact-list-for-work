@@ -77,8 +77,8 @@ const ContactState = (props) => {
 
   // Filter the contacts
   const filterContacts = (text) => {
-    console.log("From ContextState:", text);
-    console.log(state.filtered);
+    console.log("From ContextState - text: ", text);
+    console.log("From ContextState - state.filter: ", state.filtered);
     dispatch({ type: FILTER_CONTACTS, payload: text });
   };
 

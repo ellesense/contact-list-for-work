@@ -15,6 +15,10 @@ const ContactFilter = () => {
   const onChange = (e) => {
     setText(e.target.value);
     contactContext.filterContacts(text);
+
+    if (e.target.value === "") {
+      contactContext.clearFilter();
+    }
   };
 
   const onSubmit = (e) => {

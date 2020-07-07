@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 
-const Register = () => {
+const Login = () => {
   const [user, setUser] = useState({
-    name: "",
     email: "",
     password: "",
-    passwordConfirmation: "",
   });
 
   const onChange = (e) => {
@@ -22,14 +20,10 @@ const Register = () => {
 
   return (
     <>
-      <h1>Registration</h1>
+      <h1>Login</h1>
       <form onSubmit={onSubmit}>
-        <label htmlFor="name">Name</label>
-        <input type="text" name="name" id="name" onChange={onChange} />
-
         <label htmlFor="email">Email</label>
         <input type="email" name="email" id="email" onChange={onChange} />
-
         <label htmlFor="password">Password</label>
         <input
           type="password"
@@ -37,19 +31,10 @@ const Register = () => {
           id="password"
           onChange={onChange}
         />
-
-        <label htmlFor="password-confirmation">Confirm Password</label>
-        <input
-          type="password"
-          name="passwordConfirmation"
-          id="password-confirmation"
-          onChange={onChange}
-        />
-
-        <input type="submit" value="Register" />
+        <input type="submit" value="Login" />
       </form>
     </>
   );
 };
 
-export default Register;
+export default Login;
