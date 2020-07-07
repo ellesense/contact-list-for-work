@@ -10,6 +10,11 @@ const ContactItem = ({ contact }) => {
   const onDelete = () => {
     contactContext.deleteContact(id);
   };
+
+  const onSelectContact = () => {
+    contactContext.selectContact(contact);
+  };
+
   return (
     <div>
       <div className={styles.card}>
@@ -17,6 +22,7 @@ const ContactItem = ({ contact }) => {
           <span className={styles.deleteBtn}>
             <i className="fa fa-trash" onClick={onDelete}></i>
           </span>
+          <span onClick={onSelectContact}>Edit</span>
           <section>
             <p id={styles.organizationName}>{name}</p>
             <p>

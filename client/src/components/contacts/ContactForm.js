@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import ContactContext from "../../context/contact/contactContext";
 
 const ContactForm = () => {
@@ -10,6 +10,18 @@ const ContactForm = () => {
     phone: "",
   });
 
+  useEffect(() => {
+    if (contactContext.selectedContact !== null) {
+      setContact(contactContext.selectedContact);
+    } else {
+      setContact({
+        name: "",
+        email: "",
+        phone: "",
+      });
+    }
+  }, [contactContext, contactContext.selectedContact]);
+
   const onChange = (e) => {
     setContact({
       ...contact,
@@ -19,12 +31,19 @@ const ContactForm = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    contactContext.addContact(contact);
-    setContact({
-      name: "",
-      email: "",
-      phone: "",
-    });
+
+    if (contactContext.selectedContact === null) {
+      // add contact
+      contactContext.addContact(contact);
+      setContact({
+        name: "",
+        email: "",
+        phone: "",
+      });
+    } else {
+      // update an existing contact
+      contactContext.updateContact(contact);
+    }
   };
 
   const { name, email, phone } = contact;
@@ -44,7 +63,10 @@ const ContactForm = () => {
           <label htmlFor="email">Email</label>
           <input type="email" name="email" value={email} onChange={onChange} />
         </div>
-        <input type="submit" value="Add" />
+        <input
+          type="submit"
+          value={contactContext.selectedContact ? "Update" : "Add"}
+        />
       </form>
     </>
   );
