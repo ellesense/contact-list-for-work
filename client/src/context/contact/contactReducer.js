@@ -3,6 +3,8 @@ import {
   DELETE_CONTACT,
   SELECT_CONTACT,
   UPDATE_CONTACT,
+  FILTER_CONTACTS,
+  CLEAR_FILTER,
 } from "../types";
 
 export default (state, action) => {
@@ -24,6 +26,22 @@ export default (state, action) => {
         contacts: state.contacts.map((contact) => {
           return contact.id === action.payload.id ? action.payload : contact;
         }),
+      };
+    case FILTER_CONTACTS:
+      return {
+        ...state,
+        filtered: state.contacts.filter((contact) => {
+          const regex = new RegExp(`${action.payload}`, "gi");
+          return (
+            contact.name.match(regex) || contact.email.match(regex)
+            // || contact.address.match(regex)
+          );
+        }),
+      };
+    case CLEAR_FILTER:
+      return {
+        ...state,
+        filtered: null,
       };
     case SELECT_CONTACT:
       return { ...state, selectedContact: action.payload };

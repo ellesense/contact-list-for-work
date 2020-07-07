@@ -6,7 +6,8 @@ import styles from "./Contacts.module.css";
 const Contacts = () => {
   // init context
   const contactContext = useContext(ContactContext);
-  const { contacts } = contactContext;
+  const { contacts, filtered } = contactContext;
+
   return (
     <table className={styles.contactsTable}>
       <tr>
@@ -18,9 +19,13 @@ const Contacts = () => {
         <th>Delivery instruction</th>
         <th>Contacts</th>
       </tr>
-      {contacts.map((contact) => (
-        <ContactItem key={contact.id} contact={contact} />
-      ))}
+      {filtered !== null
+        ? filtered.map((contact) => (
+            <ContactItem key={contact.id} contact={contact} />
+          ))
+        : contacts.map((contact) => (
+            <ContactItem key={contact.id} contact={contact} />
+          ))}
     </table>
   );
 };
