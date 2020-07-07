@@ -16,55 +16,31 @@ const ContactItem = ({ contact }) => {
   };
 
   return (
-    <div>
-      <div className={styles.card}>
-        <div className={styles.container}>
-          <span className={styles.deleteBtn}>
+    <tr>
+      {/* <span className={styles.deleteBtn}>
             <i className="fa fa-trash" onClick={onDelete}></i>
           </span>
-          <span onClick={onSelectContact}>Edit</span>
-          <section>
-            <p id={styles.organizationName}>{name}</p>
-            <p>
-              <i className="fa fa-building"></i>
-              Unit 123, 1839 Some Drive, Some City, Some State, USA, 12345
-            </p>
-            <p>
-              <i className="fa fa-phone"></i>
-              {phone}
-            </p>
-            <hr />
-          </section>
-          <section>
-            Location information:
-            <ul>
-              <li>Tailgate not required.</li>
-              <li>
-                Pick up hours: 8AM - 4PM <br />
-                (apppointment not required.)
-              </li>
-              <li>
-                Receiving hours: 8AM - 5PM <br />
-                (delivery appointment not required.)
-              </li>
-            </ul>
-            <section>
-              Contact information:
-              <ul>
-                <li>
-                  <p>Purchaser: Jane Doe</p>
-                  <p>123-123-1234</p>
-                  <p>
-                    <i className="fa fa-envelope"></i>
-                    {email}
-                  </p>
-                </li>
-              </ul>
-            </section>
-          </section>
-        </div>
-      </div>
-    </div>
+          <span onClick={onSelectContact}>Edit</span> */}
+      <td>Supplier</td>
+      <td id={styles.organizationName}>{name}</td>
+      <td>Unit 123, 1839 Some Drive, Some City, Some State, USA, 12345</td>
+      <td>{phone}</td>
+      <td>
+        <p>Tailgate not required.</p>
+        <p>
+          Pick up hours: 8AM - 4PM <br />
+          (apppointment not required.)
+        </p>
+      </td>
+      <td>
+        <p>Tailgate not required.</p>
+        <p>
+          Receiving hours: 8AM - 5PM <br />
+          (delivery appointment not required.)
+        </p>
+      </td>
+      <td>{email}</td>
+    </tr>
   );
 };
 

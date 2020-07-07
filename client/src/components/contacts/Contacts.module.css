@@ -1,5 +1,9 @@
-.contactsList {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, 400px);
-  grid-gap: 10px;
+.contactsTable {
+  font-size: 0.8rem;
+}
+
+th {
+  background-color: rgb(24, 11, 82);
+  color: #f5f5f5;
+  padding: 8px;
 }

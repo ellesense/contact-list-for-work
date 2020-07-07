@@ -8,11 +8,20 @@ const Contacts = () => {
   const contactContext = useContext(ContactContext);
   const { contacts } = contactContext;
   return (
-    <div className={styles.contactsList}>
+    <table className={styles.contactsTable}>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>General phone number</th>
+        <th>Pick up instruction</th>
+        <th>Delivery instruction</th>
+        <th>Contacts</th>
+      </tr>
       {contacts.map((contact) => (
         <ContactItem key={contact.id} contact={contact} />
       ))}
-    </div>
+    </table>
   );
 };
 
