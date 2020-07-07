@@ -1,11 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import "./Navbar.module.css";
+import styles from "./Navbar.module.css";
 
 const Navbar = ({ title }) => {
   return (
-    <div className="navbar">
+    <div className={styles.navbar}>
       <h1>{title}</h1>
       <ul>
         <li>

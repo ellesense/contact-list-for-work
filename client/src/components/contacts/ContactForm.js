@@ -1,5 +1,6 @@
 import React, { useState, useContext, useEffect } from "react";
 import ContactContext from "../../context/contact/contactContext";
+import styles from "./ContactForm.module.css";
 
 const ContactForm = () => {
   const contactContext = useContext(ContactContext);
