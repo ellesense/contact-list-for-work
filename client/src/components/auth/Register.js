@@ -1,6 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import AlertContext from "../../context/alert/alertContext";
 
 const Register = () => {
+  const alertContext = useContext(AlertContext);
+
   const [user, setUser] = useState({
     name: "",
     email: "",
@@ -17,7 +20,13 @@ const Register = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    console.log(user);
+    if (user.name == "" || user.email === "" || user.password === "") {
+      alertContext.setAlert();
+    } else if (user.password !== user.passwordConfirmation) {
+      alertContext.setAlert();
+    } else {
+      console.log(user);
+    }
   };
 
   return (
@@ -36,6 +45,7 @@ const Register = () => {
           name="password"
           id="password"
           onChange={onChange}
+          minLength="6"
         />
 
         <label htmlFor="password-confirmation">Confirm Password</label>

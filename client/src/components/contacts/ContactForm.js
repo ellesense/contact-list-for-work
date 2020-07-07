@@ -1,9 +1,11 @@
 import React, { useState, useContext, useEffect } from "react";
 import ContactContext from "../../context/contact/contactContext";
+import AlertContext from "../../context/alert/alertContext";
 import styles from "./ContactForm.module.css";
 
 const ContactForm = () => {
   const contactContext = useContext(ContactContext);
+  const alertContext = useContext(AlertContext);
 
   const [contact, setContact] = useState({
     name: "",
@@ -34,13 +36,18 @@ const ContactForm = () => {
     e.preventDefault();
 
     if (contactContext.selectedContact === null) {
-      // add contact
-      contactContext.addContact(contact);
-      setContact({
-        name: "",
-        email: "",
-        phone: "",
-      });
+      if (contact.name === "" || contact.phone === "") {
+        // set alert
+        alertContext.setAlert();
+      } else {
+        // add contact
+        contactContext.addContact(contact);
+        setContact({
+          name: "",
+          email: "",
+          phone: "",
+        });
+      }
     } else {
       // update an existing contact
       contactContext.updateContact(contact);
