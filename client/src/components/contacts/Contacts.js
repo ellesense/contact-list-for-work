@@ -10,22 +10,26 @@ const Contacts = () => {
 
   return (
     <table className={styles.contactsTable}>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Address</th>
-        <th>General phone number</th>
-        <th>Pick up instruction</th>
-        <th>Delivery instruction</th>
-        <th>Contacts</th>
-      </tr>
-      {filtered !== null
-        ? filtered.map((contact) => (
-            <ContactItem key={contact.id} contact={contact} />
-          ))
-        : contacts.map((contact) => (
-            <ContactItem key={contact.id} contact={contact} />
-          ))}
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Name</th>
+          <th>Address</th>
+          <th>General phone number</th>
+          <th>Pick up instruction</th>
+          <th>Delivery instruction</th>
+          <th>Contacts</th>
+        </tr>
+      </thead>
+      <tbody>
+        {filtered !== null
+          ? filtered.map((contact) => (
+              <ContactItem key={contact.id} contact={contact} />
+            ))
+          : contacts.map((contact) => (
+              <ContactItem key={contact.id} contact={contact} />
+            ))}
+      </tbody>
     </table>
   );
 };

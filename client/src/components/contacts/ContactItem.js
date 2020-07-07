@@ -17,10 +17,6 @@ const ContactItem = ({ contact }) => {
 
   return (
     <tr>
-      {/* <span className={styles.deleteBtn}>
-            <i className="fa fa-trash" onClick={onDelete}></i>
-          </span>
-          <span onClick={onSelectContact}>Edit</span> */}
       <td>Supplier</td>
       <td id={styles.organizationName}>{name}</td>
       <td>Unit 123, 1839 Some Drive, Some City, Some State, USA, 12345</td>
@@ -40,6 +36,12 @@ const ContactItem = ({ contact }) => {
         </p>
       </td>
       <td>{email}</td>
+      <td>
+        <span className={styles.deleteBtn}>
+          <i className="fa fa-trash" onClick={onDelete}></i>
+        </span>
+        <span onClick={onSelectContact}>Edit</span>
+      </td>
     </tr>
   );
 };
