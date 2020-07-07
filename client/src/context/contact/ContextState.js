@@ -16,21 +16,21 @@ const ContactState = (props) => {
     contacts: [
       {
         id: uuidv4(),
-        name: "Futurola",
+        name: "ABC",
         phone: "123-456-7898",
-        email: "futurola@futurola.com",
+        email: "abc@abc.com",
       },
       {
         id: uuidv4(),
-        name: "Current Culture H2O",
+        name: "DEF",
         phone: "123-456-7898",
-        email: "cch2o@cch2o.com",
+        email: "def@def.com",
       },
       {
         id: uuidv4(),
-        name: "MLPN Inc.",
+        name: "GHI",
         phone: "123-456-7898",
-        email: "mlpn@mlpn.ca",
+        email: "ghi@ghi.ca",
       },
     ],
     selectedContact: null,
