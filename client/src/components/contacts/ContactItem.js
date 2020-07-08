@@ -37,10 +37,12 @@ const ContactItem = ({ contact }) => {
       </td>
       <td>{email}</td>
       <td>
-        <span className={styles.deleteBtn}>
-          <i className="fa fa-trash" onClick={onDelete}></i>
-        </span>
-        <span onClick={onSelectContact}>Edit</span>
+        <button className={styles.deleteBtn} onClick={onDelete}>
+          Delete
+        </button>
+        <button className={styles.editBtn} onClick={onSelectContact}>
+          Edit
+        </button>
       </td>
     </tr>
   );

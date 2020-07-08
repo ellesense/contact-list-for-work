@@ -6,3 +6,22 @@ td {
   border: 1px solid #ddd;
   padding: 8px;
 }
+
+.deleteBtn {
+  margin: 2px;
+  padding: 7px;
+  background-color: rgb(218, 143, 143);
+  border: none;
+  border-radius: 2px;
+  color: white;
+}
+
+.editBtn {
+  margin: 2px;
+  background-color: #249767;
+  padding: 7px;
+  border-color: #249767;
+  border: none;
+  border-radius: 2px;
+  color: white;
+}

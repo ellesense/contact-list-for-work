@@ -3,12 +3,12 @@ body {
 }
 
 .container {
-  padding: 30px;
+  padding: 25px;
 }
 
 form {
-  width: 500px;
-  margin: auto;
+  width: 30%;
+  /* margin: auto; */
 }
 
 input[type="text"],

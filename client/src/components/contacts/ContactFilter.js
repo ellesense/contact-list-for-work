@@ -29,7 +29,7 @@ const ContactFilter = () => {
     <>
       <form
         onSubmit={onSubmit}
-        style={{ background: "lightgrey", padding: "8px" }}
+        // style={{ background: "lightgrey", padding: "60px" }}
       >
         <h3>Filter by name or email</h3>
         <input type="text" name="text" value={text} onChange={onChange} />

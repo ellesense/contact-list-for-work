@@ -13,9 +13,15 @@ const Home = () => {
 
   return (
     <div>
-      <h1>Home</h1>
-      <ContactFilter />
-      <ContactForm />
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-around",
+        }}
+      >
+        <ContactForm />
+        <ContactFilter />
+      </div>
       <Contacts />
     </div>
   );
