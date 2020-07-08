@@ -1,8 +1,10 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import AlertContext from "../../context/alert/alertContext";
+import AuthContext from "../../context/auth/authContext";
 
-const Register = () => {
+const Register = (props) => {
   const alertContext = useContext(AlertContext);
+  const authContext = useContext(AuthContext);
 
   const [user, setUser] = useState({
     name: "",
@@ -10,6 +12,18 @@ const Register = () => {
     password: "",
     passwordConfirmation: "",
   });
+
+  useEffect(() => {
+    if (authContext.isAuthenticated) {
+      props.history.push("/");
+    }
+
+    if (authContext.error) {
+      alertContext.setAlert(authContext.error);
+      authContext.clearErrors();
+    }
+    // eslint-disable-next-line
+  }, [authContext.error, authContext.isAuthenticated]);
 
   const onChange = (e) => {
     setUser({
@@ -20,12 +34,16 @@ const Register = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    if (user.name == "" || user.email === "" || user.password === "") {
+    if (user.name === "" || user.email === "" || user.password === "") {
       alertContext.setAlert();
     } else if (user.password !== user.passwordConfirmation) {
       alertContext.setAlert();
     } else {
-      console.log(user);
+      authContext.registerUser({
+        name: user.name,
+        email: user.email,
+        password: user.password,
+      });
     }
   };
 

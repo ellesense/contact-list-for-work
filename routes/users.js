@@ -55,7 +55,7 @@ router.post(
         { expiresIn: 260000 },
         (err, jsonWebToken) => {
           if (err) throw err;
-          return res.json(jsonWebToken);
+          return res.json({ token: jsonWebToken });
         }
       );
     } catch (err) {

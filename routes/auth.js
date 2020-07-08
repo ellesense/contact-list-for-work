@@ -10,7 +10,6 @@ const User = require("../models/User");
 // GET => api/auth
 // Get signed in user
 router.get("/", auth, async (req, res) => {
-  console.log("from routes/auth.js: ", req);
   try {
     const user = await User.findById(req.user.id).select("-password");
     return res.status(200).json(user);
