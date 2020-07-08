@@ -17,7 +17,6 @@ const Register = (props) => {
     if (authContext.isAuthenticated) {
       props.history.push("/");
     }
-
     if (authContext.error) {
       alertContext.setAlert(authContext.error);
       authContext.clearErrors();
@@ -35,9 +34,9 @@ const Register = (props) => {
   const onSubmit = (e) => {
     e.preventDefault();
     if (user.name === "" || user.email === "" || user.password === "") {
-      alertContext.setAlert();
+      alertContext.setAlert("All fields are required.");
     } else if (user.password !== user.passwordConfirmation) {
-      alertContext.setAlert();
+      alertContext.setAlert("Passwords do not match.");
     } else {
       authContext.registerUser({
         name: user.name,

@@ -5,6 +5,8 @@ import authReducer from "./authReducer";
 import {
   REGISTER_SUCCESS,
   REGISTER_FAIL,
+  LOGIN_SUCCESS,
+  LOGIN_FAIL,
   LOAD_USER,
   LOAD_USER_ERROR,
   CLEAR_ERRORS,
@@ -43,6 +45,7 @@ const AuthState = (props) => {
   // Register user
   const registerUser = async (formData) => {
     const config = { headers: { "Content-Type": "application/json" } };
+    console.log("From authState.js: registerUser()");
     try {
       const res = await axios.post("/api/users", formData, config);
       dispatch({
@@ -51,7 +54,7 @@ const AuthState = (props) => {
       });
       loadUser();
     } catch (err) {
-      console.log(err.response.data.msg);
+      console.log("From authState.js: catch() -", err.response.data.msg);
       dispatch({
         type: REGISTER_FAIL,
         payload: err.response.data.msg,
@@ -60,11 +63,18 @@ const AuthState = (props) => {
   };
 
   // Login user
-  const loginUser = () => {
+  const loginUser = async (formData) => {
+    const config = { headers: { "Content-Type": "application/json" } };
     try {
-      dispatch({});
-    } catch (error) {
-      dispatch({});
+      const res = await axios.post("/api/auth", formData, config);
+      dispatch({ type: LOGIN_SUCCESS, payload: res.data });
+      loadUser();
+    } catch (err) {
+      console.log(
+        "From authState.js: loginUser() catch() - ",
+        err.response.data.msg
+      );
+      dispatch({ type: LOGIN_FAIL, payload: err.response.data.msg });
     }
   };
 

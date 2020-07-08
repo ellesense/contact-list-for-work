@@ -1,10 +1,28 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
+import AlertContext from "../../context/alert/alertContext";
+import AuthContext from "../../context/auth/authContext";
 
-const Login = () => {
+const Login = (props) => {
+  const alertContext = useContext(AlertContext);
+  const authContext = useContext(AuthContext);
+
   const [user, setUser] = useState({
     email: "",
     password: "",
   });
+
+  useEffect(() => {
+    // send user to '/' if already authenticated
+    if (authContext.isAuthenticated) {
+      props.history.push("/");
+    }
+
+    if (authContext.error) {
+      alertContext.setAlert(authContext.error);
+      authContext.clearErrors();
+    }
+    // eslint-disable-next-line
+  }, [authContext.error, authContext.isAuthenticated]);
 
   const onChange = (e) => {
     setUser({
@@ -15,7 +33,10 @@ const Login = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    console.log(user);
+    if (user.email === "" || user.password === "") {
+      alertContext.setAlert("All fields are required.");
+    }
+    authContext.loginUser(user);
   };
 
   return (
