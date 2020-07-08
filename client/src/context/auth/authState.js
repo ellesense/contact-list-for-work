@@ -10,6 +10,7 @@ import {
   LOAD_USER,
   LOAD_USER_ERROR,
   CLEAR_ERRORS,
+  LOGOUT,
 } from "../types";
 
 const AuthState = (props) => {
@@ -79,7 +80,9 @@ const AuthState = (props) => {
   };
 
   // Logout user
-  const logoutUser = () => {};
+  const logoutUser = () => {
+    dispatch({ type: LOGOUT });
+  };
 
   // Clear errors
   const clearErrors = () => {
@@ -101,6 +104,7 @@ const AuthState = (props) => {
         logoutUser,
         clearErrors,
         registerUser,
+        logoutUser,
       }}
     >
       {props.children}
