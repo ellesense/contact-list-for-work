@@ -30,7 +30,7 @@ export default (state, action) => {
         ...state,
         selectedContact: null,
         contacts: state.contacts.map((contact) => {
-          return contact.id === action.payload.id ? action.payload : contact;
+          return contact._id === action.payload._id ? action.payload : contact;
         }),
       };
     case FILTER_CONTACTS:

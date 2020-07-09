@@ -65,10 +65,13 @@ router.put("/:id", auth, async (req, res) => {
 
     const contactFields = { name, email, phone };
 
-    contact = await Contact.findByIdAndUpdate(req.params.id, {
-      $set: contactFields,
-      new: true,
-    });
+    contact = await Contact.findByIdAndUpdate(
+      req.params.id,
+      {
+        $set: contactFields,
+      },
+      { new: true }
+    );
     return res.json(contact);
   } catch (err) {
     console.error(err.message);
