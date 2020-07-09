@@ -49,6 +49,14 @@ export default (state, action) => {
         ...state,
         filtered: null,
       };
+    case "CLEAR_CONTACTS":
+      return {
+        ...state,
+        contacts: null,
+        filtered: null,
+        error: null,
+        selectedContact: null,
+      };
     case SELECT_CONTACT:
       return { ...state, selectedContact: action.payload };
     default:

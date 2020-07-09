@@ -88,6 +88,13 @@ const ContactState = (props) => {
     dispatch({ type: CLEAR_FILTER });
   };
 
+  // Clear contacts from the state when user logs out
+  const clearContacts = () => {
+    dispatch({
+      type: "CLEAR_CONTACTS",
+    });
+  };
+
   return (
     <ContactContext.Provider
       value={{
@@ -102,6 +109,7 @@ const ContactState = (props) => {
         selectContact,
         filterContacts,
         clearFilter,
+        clearContacts,
       }}
     >
       {props.children}

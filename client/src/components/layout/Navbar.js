@@ -2,10 +2,17 @@ import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import AuthContext from "../../context/auth/authContext";
+import ContactContext from "../../context/contact/contactContext";
 import styles from "./Navbar.module.css";
 
 const Navbar = ({ title }) => {
   const authContext = useContext(AuthContext);
+  const contactContext = useContext(ContactContext);
+
+  const onLogout = () => {
+    authContext.logoutUser();
+    contactContext.clearContacts();
+  };
 
   const authLinks = (
     <>
@@ -16,7 +23,7 @@ const Navbar = ({ title }) => {
         <Link to="/about">About</Link>
       </li>
       <li>
-        <a href="#" onClick={authContext.logoutUser}>
+        <a href="#" onClick={onLogout}>
           Logout
         </a>
       </li>
