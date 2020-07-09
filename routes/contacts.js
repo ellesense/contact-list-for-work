@@ -50,14 +50,52 @@ router.post(
 
 // PUT => api/contacts/:id
 // Update an existing contact
-router.put("/:id", (req, res) => {
-  res.send({ msg: "hi from users route" });
+router.put("/:id", auth, async (req, res) => {
+  const { name, email, phone } = req.body;
+
+  try {
+    let contact = await Contact.findById(req.params.id);
+    if (!contact) {
+      return res.status(404).json({ msg: "Contact not found." });
+    }
+
+    if (contact.user.toString() !== req.user.id) {
+      return res.status(401).json({ msg: "Not authorized" });
+    }
+
+    const contactFields = { name, email, phone };
+
+    contact = await Contact.findByIdAndUpdate(req.params.id, {
+      $set: contactFields,
+      new: true,
+    });
+    return res.json(contact);
+  } catch (err) {
+    console.error(err.message);
+    return res.status(500).send("Error has occurred");
+  }
 });
 
 // DELTE => api/contacts
 // Delete an existing contact
-router.delete("/", (req, res) => {
-  res.send({ msg: "hi from users route" });
+router.delete("/:id", auth, async (req, res) => {
+  try {
+    let contact = await Contact.findById(req.params.id);
+    if (!contact) {
+      return res.status(404).json({ msg: "Contact not found." });
+    }
+
+    if (contact.user.toString() !== req.user.id) {
+      return res.status(401).json({ msg: "Not authorized" });
+    }
+
+    await Contact.findByIdAndRemove(req.params.id);
+
+    return res.status(200).json({ msg: "Contact removed" });
+  } catch (err) {
+    console.error(err.message);
+    return res.status(500).send("Error has occurred");
+  }
 });
 
 module.exports = router;

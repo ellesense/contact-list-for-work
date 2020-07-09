@@ -22,7 +22,7 @@ export default (state, action) => {
         ...state,
         selectedContact: null,
         contacts: state.contacts.filter((contact) => {
-          return contact.id !== action.payload;
+          return contact._id !== action.payload;
         }),
       };
     case UPDATE_CONTACT:

@@ -5,10 +5,10 @@ import styles from "./ContactItem.module.css";
 const ContactItem = ({ contact }) => {
   const contactContext = useContext(ContactContext);
 
-  const { id, name, phone, email } = contact;
+  const { _id, name, phone, email } = contact;
 
   const onDelete = () => {
-    contactContext.deleteContact(id);
+    contactContext.deleteContact(_id);
   };
 
   const onSelectContact = () => {
