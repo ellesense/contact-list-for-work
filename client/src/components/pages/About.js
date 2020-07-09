@@ -3,7 +3,7 @@ import AuthContext from "../../context/auth/authContext";
 
 const About = () => {
   const authContext = useContext(AuthContext);
-
+  console.log(authContext.loading);
   useEffect(() => {
     authContext.loadUser();
   }, []);

@@ -11,6 +11,10 @@ import {
 
 export default (state, action) => {
   switch (action.type) {
+    case "START_LOADING":
+      return { ...state, loading: true };
+    case "END_LOADING":
+      return { ...state, loading: false };
     case REGISTER_SUCCESS:
     case LOGIN_SUCCESS:
       localStorage.setItem("token", action.payload.token);

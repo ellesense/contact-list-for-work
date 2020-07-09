@@ -24,8 +24,19 @@ const AuthState = (props) => {
 
   const [state, dispatch] = useReducer(authReducer, initState);
 
+  const startLoading = () => {
+    dispatch({ type: "START_LOADING" });
+    console.log("loading started");
+  };
+
+  const endLoading = () => {
+    dispatch({ type: "END_LOADING" });
+    console.log("loading ended");
+  };
+
   // Load user
   const loadUser = async () => {
+    startLoading();
     if (localStorage.token) {
       axios.defaults.headers.common["x-auth-token"] = localStorage.token;
     } else {
@@ -38,8 +49,10 @@ const AuthState = (props) => {
         type: LOAD_USER,
         payload: res.data,
       });
+      endLoading();
     } catch (err) {
       dispatch({ type: LOAD_USER_ERROR });
+      endLoading();
     }
   };
 
