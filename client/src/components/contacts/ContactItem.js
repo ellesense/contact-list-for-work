@@ -8,6 +8,7 @@ const ContactItem = ({ contact }) => {
   const { _id, name, phone, email } = contact;
 
   const onDelete = () => {
+    alert("Are you sure?");
     contactContext.deleteContact(_id);
   };
 

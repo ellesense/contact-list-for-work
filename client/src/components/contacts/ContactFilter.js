@@ -1,5 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import ContactContext from "../../context/contact/contactContext";
+import styles from "./ContactFilter.module.css";
 
 const ContactFilter = () => {
   const contactContext = useContext(ContactContext);
@@ -27,11 +28,8 @@ const ContactFilter = () => {
 
   return (
     <>
-      <form
-        onSubmit={onSubmit}
-        // style={{ background: "lightgrey", padding: "60px" }}
-      >
-        <h3>Filter by name or email</h3>
+      <form onSubmit={onSubmit}>
+        <h3 className={styles.heading}>Filter by name or email</h3>
         <input type="text" name="text" value={text} onChange={onChange} />
       </form>
     </>
