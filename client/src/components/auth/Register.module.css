@@ -1,0 +1,20 @@
+.registerDiv {
+  margin: 50px auto;
+  width: 300px;
+  background-color: #f5f5f5;
+  color: rgb(24, 42, 51);
+  padding: 60px;
+}
+
+.registerDiv h1 {
+  text-align: center;
+}
+
+.registerForm {
+  width: 100%;
+}
+
+.registerForm input {
+  border: none;
+  outline: none;
+}

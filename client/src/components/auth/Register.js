@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect } from "react";
 import AlertContext from "../../context/alert/alertContext";
 import AuthContext from "../../context/auth/authContext";
+import styles from "./Register.module.css";
 
 const Register = (props) => {
   const alertContext = useContext(AlertContext);
@@ -48,33 +49,41 @@ const Register = (props) => {
 
   return (
     <>
-      <h1>Registration</h1>
-      <form onSubmit={onSubmit}>
-        <label htmlFor="name">Name</label>
-        <input type="text" name="name" id="name" onChange={onChange} />
+      <div className={styles.registerDiv}>
+        <h1>REGISTER</h1>
+        <form onSubmit={onSubmit} className={styles.registerForm}>
+          <div>
+            <label htmlFor="name">Name</label>
+            <input type="text" name="name" id="name" onChange={onChange} />
+          </div>
 
-        <label htmlFor="email">Email</label>
-        <input type="email" name="email" id="email" onChange={onChange} />
+          <div>
+            <label htmlFor="email">Email</label>
+            <input type="email" name="email" id="email" onChange={onChange} />
+          </div>
 
-        <label htmlFor="password">Password</label>
-        <input
-          type="password"
-          name="password"
-          id="password"
-          onChange={onChange}
-          minLength="6"
-        />
-
-        <label htmlFor="password-confirmation">Confirm Password</label>
-        <input
-          type="password"
-          name="passwordConfirmation"
-          id="password-confirmation"
-          onChange={onChange}
-        />
-
-        <input type="submit" value="Register" />
-      </form>
+          <div>
+            <label htmlFor="password">Password</label>
+            <input
+              type="password"
+              name="password"
+              id="password"
+              onChange={onChange}
+              minLength="6"
+            />
+          </div>
+          <div>
+            <label htmlFor="password-confirmation">Confirm Password</label>
+            <input
+              type="password"
+              name="passwordConfirmation"
+              id="password-confirmation"
+              onChange={onChange}
+            />
+          </div>
+          <input type="submit" value="Register" />
+        </form>
+      </div>
     </>
   );
 };
