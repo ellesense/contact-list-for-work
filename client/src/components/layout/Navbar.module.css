@@ -1,12 +1,35 @@
-.navbar {
-  padding: 0 20px;
+.heading {
+  font-size: 1.5rem;
+  color: #f5f5f5;
 }
 
-ul li {
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 5%;
+  background-color: rgb(24, 42, 51);
+}
+
+.navLinks {
   list-style: none;
 }
 
-ul li a {
+.navLinks li {
+  display: inline-block;
+  padding: 0px 20px;
+}
+
+.navLinks li a {
+  transition: all 0.3s ease 0s;
   text-decoration: none;
   text-transform: uppercase;
+}
+
+.navLinks li a:visited {
+  color: #f5f5f5;
+}
+
+.navLinks li a:hover {
+  color: rgb(97, 182, 224);
 }

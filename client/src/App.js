@@ -26,7 +26,7 @@ function App() {
         <ContactState>
           <BrowserRouter>
             <>
-              <Navbar title="Mini CRM" />
+              <Navbar title="Logistics Contacts" />
               <div className={styles.container}>
                 <Alert />
                 <Switch>

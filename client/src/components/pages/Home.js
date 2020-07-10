@@ -13,12 +13,7 @@ const Home = () => {
 
   return (
     <div>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-around",
-        }}
-      >
+      <div>
         <ContactForm />
         <ContactFilter />
       </div>

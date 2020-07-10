@@ -48,10 +48,14 @@ const Navbar = ({ title }) => {
   );
 
   return (
-    <div className={styles.navbar}>
-      <h1>{title}</h1>
-      <ul>{authContext.isAuthenticated ? authLinks : nonAuthLinks}</ul>
-    </div>
+    <header>
+      <h1 className={styles.heading}>{title}</h1>
+      <nav>
+        <ul class={styles.navLinks}>
+          {authContext.isAuthenticated ? authLinks : nonAuthLinks}
+        </ul>
+      </nav>
+    </header>
   );
 };
 
