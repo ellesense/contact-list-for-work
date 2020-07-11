@@ -10,12 +10,9 @@ const About = () => {
 
   return (
     <div>
-      <h1>About</h1>
+      <h1>LoCo (Logistcs Contacts)</h1>
       <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Beatae,
-        tempore nihil autem excepturi atque vero eligendi cupiditate voluptate
-        consequatur eveniet laboriosam quod impedit deleniti sed tenetur et.
-        Quis, recusandae quia!
+        Create and maintain contact information about suppliers and customers.
       </p>
     </div>
   );
