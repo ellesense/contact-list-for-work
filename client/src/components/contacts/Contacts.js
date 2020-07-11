@@ -26,6 +26,7 @@ const Contacts = () => {
               <th>Pick up instruction</th>
               <th>Delivery instruction</th>
               <th>Contacts</th>
+              <th>Notes</th>
               <th>Actions</th>
             </tr>
           </thead>

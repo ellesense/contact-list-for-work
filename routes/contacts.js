@@ -30,13 +30,32 @@ router.post(
       return res.status(400).json({ errors: errors.array() });
     }
 
-    const { name, phone, email, type } = req.body;
+    const {
+      name,
+      phone,
+      email,
+      address,
+      postalCode,
+      city,
+      stateOrProvince,
+      pickUpInstruction,
+      deliveryInstruction,
+      notes,
+      type,
+    } = req.body;
     try {
       const newContact = new Contact({
         user: req.user.id,
         name,
         phone,
         email,
+        address,
+        postalCode,
+        city,
+        stateOrProvince,
+        pickUpInstruction,
+        deliveryInstruction,
+        notes,
         type,
       });
       const savedContact = await newContact.save();
@@ -51,7 +70,19 @@ router.post(
 // PUT => api/contacts/:id
 // Update an existing contact
 router.put("/:id", auth, async (req, res) => {
-  const { name, email, phone } = req.body;
+  const {
+    name,
+    phone,
+    email,
+    address,
+    postalCode,
+    city,
+    stateOrProvince,
+    pickUpInstruction,
+    deliveryInstruction,
+    notes,
+    type,
+  } = req.body;
 
   try {
     let contact = await Contact.findById(req.params.id);
@@ -63,7 +94,19 @@ router.put("/:id", auth, async (req, res) => {
       return res.status(401).json({ msg: "Not authorized" });
     }
 
-    const contactFields = { name, email, phone };
+    const contactFields = {
+      name,
+      phone,
+      email,
+      address,
+      postalCode,
+      city,
+      stateOrProvince,
+      pickUpInstruction,
+      deliveryInstruction,
+      notes,
+      type,
+    };
 
     contact = await Contact.findByIdAndUpdate(
       req.params.id,

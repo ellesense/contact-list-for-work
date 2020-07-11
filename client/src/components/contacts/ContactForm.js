@@ -11,6 +11,14 @@ const ContactForm = () => {
     name: "",
     email: "",
     phone: "",
+    address: "",
+    postalCode: "",
+    city: "",
+    stateOrProvince: "",
+    pickUpInstruction: "",
+    deliveryInstruction: "",
+    notes: "",
+    type: "",
   });
 
   useEffect(() => {
@@ -21,6 +29,14 @@ const ContactForm = () => {
         name: "",
         email: "",
         phone: "",
+        address: "",
+        postalCode: "",
+        city: "",
+        stateOrProvince: "",
+        pickUpInstruction: "",
+        deliveryInstruction: "",
+        notes: "",
+        type: "",
       });
     }
   }, [contactContext, contactContext.selectedContact]);
@@ -36,7 +52,7 @@ const ContactForm = () => {
     e.preventDefault();
 
     if (contactContext.selectedContact === null) {
-      if (contact.name === "" || contact.phone === "") {
+      if (contact.name === "") {
         // set alert
         alertContext.setAlert();
       } else {
@@ -46,6 +62,14 @@ const ContactForm = () => {
           name: "",
           email: "",
           phone: "",
+          address: "",
+          postalCode: "",
+          city: "",
+          stateOrProvince: "",
+          pickUpInstruction: "",
+          deliveryInstruction: "",
+          notes: "",
+          type: "",
         });
       }
     } else {
@@ -54,7 +78,19 @@ const ContactForm = () => {
     }
   };
 
-  const { name, email, phone } = contact;
+  const {
+    name,
+    email,
+    phone,
+    address,
+    postalCode,
+    city,
+    stateOrProvince,
+    pickUpInstruction,
+    deliveryInstruction,
+    notes,
+    type,
+  } = contact;
 
   return (
     <>
@@ -70,6 +106,59 @@ const ContactForm = () => {
         <div>
           <label htmlFor="email">Email</label>
           <input type="email" name="email" value={email} onChange={onChange} />
+        </div>
+        <div>
+          <label htmlFor="address">Address</label>
+          <input
+            type="text"
+            name="address"
+            value={address}
+            onChange={onChange}
+          />
+        </div>
+        <div>
+          <label htmlFor="postalCode">Postal code</label>
+          <input
+            type="text"
+            name="postalCode"
+            value={postalCode}
+            onChange={onChange}
+          />
+        </div>
+        <div>
+          <label htmlFor="city">City</label>
+          <input type="text" name="city" value={city} onChange={onChange} />
+        </div>
+        <div>
+          <label htmlFor="stateOrProvince">State/Province</label>
+          <input
+            type="text"
+            name="stateOrProvince"
+            value={stateOrProvince}
+            onChange={onChange}
+          />
+        </div>
+        <div>
+          <label htmlFor="pickUpInstruction">Pick up instruction</label>
+          <input
+            type="text"
+            name="pickUpInstruction"
+            value={pickUpInstruction}
+            onChange={onChange}
+          />
+        </div>
+        <div>
+          <label htmlFor="deliveryInstruction">Delivery instruction</label>
+          <input
+            type="text"
+            name="deliveryInstruction"
+            value={deliveryInstruction}
+            onChange={onChange}
+          />
+        </div>
+        <div>
+          <label htmlFor="notes">Notes</label>
+          <input type="text" name="notes" value={notes} onChange={onChange} />
         </div>
         <input
           type="submit"

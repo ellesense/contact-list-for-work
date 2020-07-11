@@ -5,7 +5,20 @@ import styles from "./ContactItem.module.css";
 const ContactItem = ({ contact }) => {
   const contactContext = useContext(ContactContext);
 
-  const { _id, name, phone, email } = contact;
+  const {
+    _id,
+    name,
+    phone,
+    email,
+    address,
+    postalCode,
+    city,
+    stateOrProvince,
+    pickUpInstruction,
+    deliveryInstruction,
+    notes,
+    type,
+  } = contact;
 
   const onDelete = () => {
     alert("Are you sure?");
@@ -20,23 +33,12 @@ const ContactItem = ({ contact }) => {
     <tr>
       <td>Supplier</td>
       <td id={styles.organizationName}>{name}</td>
-      <td>Unit 123, 1839 Some Drive, Some City, Some State, USA, 12345</td>
+      <td>{address}</td>
       <td>{phone}</td>
-      <td>
-        <p>Tailgate not required.</p>
-        <p>
-          Pick up hours: 8AM - 4PM <br />
-          (apppointment not required.)
-        </p>
-      </td>
-      <td>
-        <p>Tailgate not required.</p>
-        <p>
-          Receiving hours: 8AM - 5PM <br />
-          (delivery appointment not required.)
-        </p>
-      </td>
+      <td>{pickUpInstruction}</td>
+      <td>{deliveryInstruction}</td>
       <td>{email}</td>
+      <td>{notes}</td>
       <td>
         <button className={styles.deleteBtn} onClick={onDelete}>
           Delete

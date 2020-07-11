@@ -12,7 +12,31 @@ const ContactSchema = mongoose.Schema({
   phone: {
     type: String,
   },
+  address: {
+    type: String,
+  },
+  postalCode: {
+    type: String,
+  },
+  city: {
+    type: String,
+  },
+  stateOrProvince: {
+    type: String,
+  },
   email: {
+    type: String,
+  },
+  pickUpInstruction: {
+    type: String,
+  },
+  deliveryInstruction: {
+    type: String,
+  },
+  notes: {
+    type: String,
+  },
+  deliveryInstruction: {
     type: String,
   },
   type: { type: String, default: "personal" },
