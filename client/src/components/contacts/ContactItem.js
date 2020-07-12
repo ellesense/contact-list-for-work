@@ -29,10 +29,14 @@ const ContactItem = ({ contact }) => {
     contactContext.selectContact(contact);
   };
 
+  const onShowDetail = () => {
+    contactContext.showDetail(contact);
+  };
+
   return (
     <tr>
       <td>{type.charAt(0).toUpperCase() + type.slice(1)}</td>
-      <td className={styles.organizationName}>
+      <td className={styles.organizationName} onClick={onShowDetail}>
         {name.charAt(0).toUpperCase() + name.slice(1)}
       </td>
       <td>

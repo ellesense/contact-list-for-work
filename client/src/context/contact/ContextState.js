@@ -4,6 +4,7 @@ import ContactContext from "./contactContext";
 import contactReducer from "./contactReducer";
 import {
   GET_CONTACTS,
+  SHOW_DETAIL,
   ADD_CONTACT,
   ADD_CONTACT_ERROR,
   DELETE_CONTACT,
@@ -19,6 +20,7 @@ const ContactState = (props) => {
     selectedContact: null,
     filtered: null,
     error: null,
+    contactDetail: {},
   };
 
   const [state, dispatch] = useReducer(contactReducer, initState);
@@ -110,6 +112,10 @@ const ContactState = (props) => {
     });
   };
 
+  const showDetail = (contact) => {
+    dispatch({ type: SHOW_DETAIL, payload: contact });
+  };
+
   return (
     <ContactContext.Provider
       value={{
@@ -117,7 +123,9 @@ const ContactState = (props) => {
         selectedContact: state.selectedContact,
         filtered: state.filtered,
         error: state.error,
+        contactDetail: state.contactDetail,
         getContacts,
+        showDetail,
         addContact,
         deleteContact,
         updateContact,

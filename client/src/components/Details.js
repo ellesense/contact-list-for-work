@@ -1,18 +1,36 @@
-import React from "react";
+import React, { useContext } from "react";
+import ContactContext from "../context/contact/contactContext";
 import styles from "./Details.module.css";
 
 const Details = () => {
+  const contactContext = useContext(ContactContext);
+
+  const {
+    name,
+    email,
+    phone,
+    address,
+    postalCode,
+    city,
+    stateOrProvince,
+    pickUpInstruction,
+    deliveryInstruction,
+    notes,
+    type,
+  } = contactContext.contactDetail;
+
   return (
     <div className={styles.details}>
-      <h1>Details</h1>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus,
-        hic? Consequuntur perferendis aut itaque, doloribus provident quos
-        voluptate, beatae magni dolores molestias natus harum animi dolore
-        aliquid doloremque inventore nostrum!
-      </p>
+      <div>
+        <p>{name}</p>
+        <p>{address}</p>
+        <p>{city}</p>
+        <p>{stateOrProvince}</p>
+        <p>{postalCode}</p>
+        <p>{pickUpInstruction}</p>
+        <p>{deliveryInstruction}</p>
+      </div>
     </div>
   );
 };
-
 export default Details;
