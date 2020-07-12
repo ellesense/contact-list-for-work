@@ -19,15 +19,17 @@ const Contacts = () => {
         <table className={styles.contactsTable}>
           <thead>
             <tr>
-              <th>Type</th>
-              <th>Name</th>
-              <th>Address</th>
-              <th>General phone number</th>
-              <th>Pick up instruction</th>
-              <th>Delivery instruction</th>
+              <th className={styles.type}>Type</th>
+              <th className={styles.name}>Name</th>
+              <th className={styles.address}>Address</th>
+              <th className={styles.mainPhoneNumber}>Main phone number</th>
+              <th className={styles.pickUpInstruction}>Pick up instruction</th>
+              <th className={styles.deliveryInstruction}>
+                Delivery instruction
+              </th>
               <th>Email</th>
               <th>Notes</th>
-              <th>Actions</th>
+              <th className={styles.actions}>Actions</th>
             </tr>
           </thead>
           <tbody>

@@ -31,9 +31,17 @@ const ContactItem = ({ contact }) => {
 
   return (
     <tr>
-      <td>{type}</td>
-      <td id={styles.organizationName}>{name}</td>
-      <td>{address}</td>
+      <td>{type.charAt(0).toUpperCase() + type.slice(1)}</td>
+      <td className={styles.organizationName}>
+        {name.charAt(0).toUpperCase() + name.slice(1)}
+      </td>
+      <td>
+        {address}
+        <br />
+        {city.charAt(0).toUpperCase() + city.slice(1)}
+        <br />
+        {stateOrProvince.charAt(0).toUpperCase() + stateOrProvince.slice(1)}
+      </td>
       <td>{phone}</td>
       <td>{pickUpInstruction}</td>
       <td>{deliveryInstruction}</td>

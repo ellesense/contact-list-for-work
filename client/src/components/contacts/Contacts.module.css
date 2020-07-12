@@ -8,3 +8,31 @@ th {
   color: #f5f5f5;
   padding: 8px;
 }
+
+.type {
+  width: 70px;
+}
+
+.name {
+  width: 250;
+}
+
+.address {
+  width: 200;
+}
+
+.mainPhoneNumber {
+  width: 120px;
+}
+
+.pickUpInstruction {
+  width: 150px;
+}
+
+.deliveryInstruction {
+  width: 150px;
+}
+
+.actions {
+  width: 110px;
+}

@@ -1,5 +1,5 @@
 .heading {
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   color: #f5f5f5;
 }
 
@@ -7,7 +7,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 5%;
+  padding: 0 20px;
   background-color: rgb(24, 42, 51);
 }
 
@@ -25,6 +25,7 @@ header {
   text-decoration: none;
   text-transform: uppercase;
   color: #f5f5f5;
+  font-size: 1rem;
 }
 
 .navLinks li a:visited {
