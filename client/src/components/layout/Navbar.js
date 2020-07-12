@@ -23,7 +23,7 @@ const Navbar = ({ title }) => {
         <Link to="/about">About</Link>
       </li>
       <li>
-        <a href="#" onClick={onLogout}>
+        <a href="#" onClick={onLogout} className={styles.logOutButton}>
           Logout
         </a>
       </li>
