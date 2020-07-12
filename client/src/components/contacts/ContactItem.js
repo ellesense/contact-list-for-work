@@ -31,7 +31,7 @@ const ContactItem = ({ contact }) => {
 
   return (
     <tr>
-      <td>Supplier</td>
+      <td>{type}</td>
       <td id={styles.organizationName}>{name}</td>
       <td>{address}</td>
       <td>{phone}</td>

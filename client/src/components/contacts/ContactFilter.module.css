@@ -1,3 +1,8 @@
 .heading {
-  font-size: 1rem;
+  font-size: 0.9rem;
+}
+
+.contactFilterForm {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }

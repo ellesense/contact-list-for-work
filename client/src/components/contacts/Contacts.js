@@ -25,7 +25,7 @@ const Contacts = () => {
               <th>General phone number</th>
               <th>Pick up instruction</th>
               <th>Delivery instruction</th>
-              <th>Contacts</th>
+              <th>Email</th>
               <th>Notes</th>
               <th>Actions</th>
             </tr>

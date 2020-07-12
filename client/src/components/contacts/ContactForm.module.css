@@ -1,0 +1,15 @@
+.contactForm {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 13px;
+  font-size: 0.9rem;
+}
+
+.contactForm div {
+  width: 200px;
+}
+
+.submitButton {
+  display: inline-block;
+  height: 50px;
+}

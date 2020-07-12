@@ -54,7 +54,7 @@ const ContactForm = () => {
     if (contactContext.selectedContact === null) {
       if (contact.name === "") {
         // set alert
-        alertContext.setAlert();
+        alertContext.setAlert("Name is required.");
       } else {
         // add contact
         contactContext.addContact(contact);
@@ -95,73 +95,91 @@ const ContactForm = () => {
   return (
     <>
       <form onSubmit={onSubmit}>
-        <div>
-          <label htmlFor="name">Organization name</label>
-          <input type="text" name="name" value={name} onChange={onChange} />
-        </div>
-        <div>
-          <label htmlFor="phone">General phone number</label>
-          <input type="text" name="phone" value={phone} onChange={onChange} />
-        </div>
-        <div>
-          <label htmlFor="email">Email</label>
-          <input type="email" name="email" value={email} onChange={onChange} />
-        </div>
-        <div>
-          <label htmlFor="address">Address</label>
-          <input
-            type="text"
-            name="address"
-            value={address}
-            onChange={onChange}
-          />
-        </div>
-        <div>
-          <label htmlFor="postalCode">Postal code</label>
-          <input
-            type="text"
-            name="postalCode"
-            value={postalCode}
-            onChange={onChange}
-          />
-        </div>
-        <div>
-          <label htmlFor="city">City</label>
-          <input type="text" name="city" value={city} onChange={onChange} />
-        </div>
-        <div>
-          <label htmlFor="stateOrProvince">State/Province</label>
-          <input
-            type="text"
-            name="stateOrProvince"
-            value={stateOrProvince}
-            onChange={onChange}
-          />
-        </div>
-        <div>
-          <label htmlFor="pickUpInstruction">Pick up instruction</label>
-          <input
-            type="text"
-            name="pickUpInstruction"
-            value={pickUpInstruction}
-            onChange={onChange}
-          />
-        </div>
-        <div>
-          <label htmlFor="deliveryInstruction">Delivery instruction</label>
-          <input
-            type="text"
-            name="deliveryInstruction"
-            value={deliveryInstruction}
-            onChange={onChange}
-          />
-        </div>
-        <div>
-          <label htmlFor="notes">Notes</label>
-          <input type="text" name="notes" value={notes} onChange={onChange} />
+        <div className={styles.contactForm}>
+          <div>
+            <label htmlFor="type">Type</label>
+            <input type="text" name="type" value={type} onChange={onChange} />
+          </div>
+          <div>
+            <label htmlFor="name">Name</label>
+            <input
+              type="text"
+              name="name"
+              value={name}
+              onChange={onChange}
+              autoFocus
+            />
+          </div>
+          <div>
+            <label htmlFor="phone">Main phone number</label>
+            <input type="text" name="phone" value={phone} onChange={onChange} />
+          </div>
+          <div>
+            <label htmlFor="email">Email</label>
+            <input
+              type="email"
+              name="email"
+              value={email}
+              onChange={onChange}
+            />
+          </div>
+          <div>
+            <label htmlFor="address">Address</label>
+            <input
+              type="text"
+              name="address"
+              value={address}
+              onChange={onChange}
+            />
+          </div>
+          <div>
+            <label htmlFor="postalCode">Postal code</label>
+            <input
+              type="text"
+              name="postalCode"
+              value={postalCode}
+              onChange={onChange}
+            />
+          </div>
+          <div>
+            <label htmlFor="city">City</label>
+            <input type="text" name="city" value={city} onChange={onChange} />
+          </div>
+          <div>
+            <label htmlFor="stateOrProvince">State/Province</label>
+            <input
+              type="text"
+              name="stateOrProvince"
+              value={stateOrProvince}
+              onChange={onChange}
+            />
+          </div>
+          <div>
+            <label htmlFor="pickUpInstruction">Pick up instruction</label>
+            <input
+              type="text"
+              name="pickUpInstruction"
+              value={pickUpInstruction}
+              onChange={onChange}
+            />
+          </div>
+          <div>
+            <label htmlFor="deliveryInstruction">Delivery instruction</label>
+            <input
+              type="text"
+              name="deliveryInstruction"
+              value={deliveryInstruction}
+              onChange={onChange}
+            />
+          </div>
+          <div>
+            <label htmlFor="notes">Notes</label>
+            <input type="text" name="notes" value={notes} onChange={onChange} />
+          </div>
         </div>
         <input
           type="submit"
+          className={styles.submitButton}
           value={contactContext.selectedContact ? "Update" : "Add"}
         />
       </form>
