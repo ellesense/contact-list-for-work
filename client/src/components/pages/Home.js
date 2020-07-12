@@ -1,5 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import AuthContext from "../../context/auth/authContext";
+import Analysis from "../Analysis";
 import Contacts from "../contacts/Contacts";
 import ContactForm from "../contacts/ContactForm";
 import Details from "../Details";
@@ -15,6 +16,7 @@ const Home = () => {
 
   return (
     <>
+      <Analysis />
       <div className={styles.home}>
         <ContactForm />
         <Details />
