@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { CopyToClipboard } from "react-copy-to-clipboard";
 import ContactContext from "../context/contact/contactContext";
 import styles from "./Details.module.css";
 
@@ -21,6 +22,19 @@ const Details = () => {
 
   return (
     <div className={styles.details}>
+      <CopyToClipboard
+        text={`
+      ${name}
+      ${address}
+      ${city}
+      ${stateOrProvince}
+      ${postalCode}
+      ${pickUpInstruction}
+      ${deliveryInstruction}
+      `}
+      >
+        <button>Copy to clipboard</button>
+      </CopyToClipboard>
       <div>
         <p className={styles.name}>{name}</p>
         <p>{address}</p>
