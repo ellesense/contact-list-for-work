@@ -20,9 +20,6 @@ const Navbar = ({ title }) => {
         <Link to="/">Contacts</Link>
       </li>
       <li>
-        <Link to="/about">About</Link>
-      </li>
-      <li>
         <a href="#" onClick={onLogout} className={styles.logOutButton}>
           Logout
         </a>
@@ -34,9 +31,6 @@ const Navbar = ({ title }) => {
     <>
       <li>
         <Link to="/">Contacts</Link>
-      </li>
-      <li>
-        <Link to="/about">About</Link>
       </li>
       <li>
         <Link to="/register">Register</Link>
