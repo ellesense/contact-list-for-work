@@ -29,8 +29,13 @@ const ContactFilter = () => {
   return (
     <>
       <form onSubmit={onSubmit} className={styles.contactFilterForm}>
-        <h3 className={styles.heading}>Filter by name or email</h3>
-        <input type="text" name="text" value={text} onChange={onChange} />
+        <input
+          type="text"
+          name="text"
+          value={text}
+          onChange={onChange}
+          placeholder="Filter by name or email"
+        />
       </form>
     </>
   );
