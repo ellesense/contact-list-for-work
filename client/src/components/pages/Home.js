@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import AuthContext from "../../context/auth/authContext";
-import Analysis from "../Analysis";
+// import Analysis from "../Analysis";
 import Contacts from "../contacts/Contacts";
 import ContactForm from "../contacts/ContactForm";
 import Details from "../Details";
@@ -16,12 +16,16 @@ const Home = () => {
 
   return (
     <>
-      <Analysis />
+      {/* <Analysis /> */}
       <div className={styles.home}>
-        <ContactForm />
-        <Details />
+        <div>
+          <ContactForm />
+          <ContactFilter />
+        </div>
+        <div>
+          <Details />
+        </div>
       </div>
-      <ContactFilter />
       <Contacts />
     </>
   );

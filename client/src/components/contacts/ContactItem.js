@@ -34,9 +34,9 @@ const ContactItem = ({ contact }) => {
   };
 
   return (
-    <tr>
+    <tr onClick={onShowDetail}>
       <td>{type.charAt(0).toUpperCase() + type.slice(1)}</td>
-      <td className={styles.organizationName} onClick={onShowDetail}>
+      <td className={styles.organizationName}>
         {name.charAt(0).toUpperCase() + name.slice(1)}
       </td>
       <td>

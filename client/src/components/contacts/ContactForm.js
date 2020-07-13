@@ -97,84 +97,104 @@ const ContactForm = () => {
       <form onSubmit={onSubmit}>
         <div className={styles.contactForm}>
           <div>
-            <label htmlFor="type">Type</label>
-            <input type="text" name="type" value={type} onChange={onChange} />
+            <input
+              type="text"
+              name="type"
+              value={type}
+              onChange={onChange}
+              placeholder="Type"
+              autoFocus
+            />
           </div>
           <div>
-            <label htmlFor="name">Name</label>
             <input
               type="text"
               name="name"
               value={name}
               onChange={onChange}
-              autoFocus
+              placeholder="Name"
             />
           </div>
           <div>
-            <label htmlFor="phone">Main phone number</label>
-            <input type="text" name="phone" value={phone} onChange={onChange} />
+            <input
+              type="text"
+              name="phone"
+              value={phone}
+              onChange={onChange}
+              placeholder="Main phone number"
+            />
           </div>
           <div>
-            <label htmlFor="email">Email</label>
             <input
               type="email"
               name="email"
               value={email}
               onChange={onChange}
+              placeholder="Email"
             />
           </div>
           <div>
-            <label htmlFor="address">Address</label>
             <input
               type="text"
               name="address"
               value={address}
               onChange={onChange}
+              placeholder="Address"
             />
           </div>
           <div>
-            <label htmlFor="postalCode">Postal code</label>
             <input
               type="text"
               name="postalCode"
               value={postalCode}
               onChange={onChange}
+              placeholder="Postal code"
             />
           </div>
           <div>
-            <label htmlFor="city">City</label>
-            <input type="text" name="city" value={city} onChange={onChange} />
+            <input
+              type="text"
+              name="city"
+              value={city}
+              onChange={onChange}
+              placeholder="City"
+            />
           </div>
           <div>
-            <label htmlFor="stateOrProvince">State/Province</label>
             <input
               type="text"
               name="stateOrProvince"
               value={stateOrProvince}
               onChange={onChange}
+              placeholder="State or province"
             />
           </div>
           <div>
-            <label htmlFor="pickUpInstruction">Pick up instruction</label>
             <input
               type="text"
               name="pickUpInstruction"
               value={pickUpInstruction}
               onChange={onChange}
+              placeholder="Pick up instruction"
             />
           </div>
           <div>
-            <label htmlFor="deliveryInstruction">Delivery instruction</label>
             <input
               type="text"
               name="deliveryInstruction"
               value={deliveryInstruction}
               onChange={onChange}
+              placeholder="Delivery instruction"
             />
           </div>
           <div>
-            <label htmlFor="notes">Notes</label>
-            <input type="text" name="notes" value={notes} onChange={onChange} />
+            <input
+              type="text"
+              name="notes"
+              value={notes}
+              onChange={onChange}
+              placeholder="Notes"
+            />
           </div>
         </div>
         <input

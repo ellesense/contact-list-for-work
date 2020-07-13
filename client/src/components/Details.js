@@ -22,7 +22,7 @@ const Details = () => {
   return (
     <div className={styles.details}>
       <div>
-        <p>{name}</p>
+        <p className={styles.name}>{name}</p>
         <p>{address}</p>
         <p>{city}</p>
         <p>{stateOrProvince}</p>
