@@ -1,12 +1,13 @@
 .contactForm {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 13px;
-  font-size: 0.9rem;
+  width: 400px;
+  padding: 0 20px 0;
+}
+
+label {
+  font-size: 0.8rem;
 }
 
 input[type="text"],
-/* input[type="textarea"], */
 input[type="email"],
 input[type="password"],
 select {
@@ -22,8 +23,16 @@ select {
   box-sizing: border-box;
 }
 
+textarea {
+  border-top: none;
+  width: 400px;
+  border-right: none;
+  border-left: none;
+  outline: none;
+}
+
 input[type="submit"] {
-  width: 200px;
+  width: 400px;
   background-color: rgb(24, 42, 51);
   color: white;
   padding: 14px 20px;
@@ -38,5 +47,5 @@ input[type="submit"]:hover {
 }
 
 .contactForm div {
-  width: 200px;
+  width: 400px;
 }

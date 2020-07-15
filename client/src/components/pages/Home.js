@@ -19,14 +19,16 @@ const Home = () => {
       {/* <Analysis /> */}
       <div className={styles.home}>
         <div>
-          <ContactForm />
           <ContactFilter />
+          <ContactForm />
         </div>
-        <div>
+        {/* <div>
           <Details />
+        </div> */}
+        <div>
+          <Contacts />
         </div>
       </div>
-      <Contacts />
     </>
   );
 };

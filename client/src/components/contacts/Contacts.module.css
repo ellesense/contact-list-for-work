@@ -10,29 +10,29 @@ th {
 }
 
 .type {
-  width: 70px;
+  /* width: 70px; */
 }
 
 .name {
-  width: 250;
+  /* width: 250; */
 }
 
 .address {
-  width: 200;
+  /* width: 200; */
 }
 
 .mainPhoneNumber {
-  width: 120px;
+  /* width: 120px; */
 }
 
 .pickUpInstruction {
-  width: 150px;
+  /* width: 150px; */
 }
 
 .deliveryInstruction {
-  width: 150px;
+  /* width: 150px; */
 }
 
 .actions {
-  width: 110px;
+  /* width: 110px; */
 }

@@ -105,43 +105,35 @@ const ContactForm = () => {
       <form onSubmit={onSubmit}>
         <div className={styles.contactForm}>
           <div>
+            <label htmlFor="type">Type</label>
             <input
               type="text"
               name="type"
               value={type}
               onChange={onChange}
-              placeholder="Type"
               autoFocus
             />
           </div>
           <div>
+            <label htmlFor="businessTaxId">Business Tax ID</label>
             <input
               type="text"
               name="businessTaxId"
               value={businessTaxId}
               onChange={onChange}
-              placeholder="Business Tax ID"
             />
           </div>
           <div>
-            <input
-              type="text"
-              name="name"
-              value={name}
-              onChange={onChange}
-              placeholder="Name"
-            />
+            <label htmlFor="name">Name</label>
+            <input type="text" name="name" value={name} onChange={onChange} />
           </div>
           <div>
-            <input
-              type="text"
-              name="phone"
-              value={phone}
-              onChange={onChange}
-              placeholder="Main phone number"
-            />
+            <label htmlFor="phone">Main phone number</label>
+            <input type="text" name="phone" value={phone} onChange={onChange} />
           </div>
           <div>
+            <label htmlFor="email">Email(s)</label>
+            <br />
             <textarea
               name="email"
               value={email}
@@ -151,51 +143,47 @@ const ContactForm = () => {
             />
           </div>
           <div>
+            <label htmlFor="address">Office address</label>
             <input
               type="text"
               name="address"
               value={address}
               onChange={onChange}
-              placeholder="Address"
             />
           </div>
           <div>
+            <label htmlFor="postalCode">Postal code</label>
             <input
               type="text"
               name="postalCode"
               value={postalCode}
               onChange={onChange}
-              placeholder="Postal code"
             />
           </div>
           <div>
-            <input
-              type="text"
-              name="city"
-              value={city}
-              onChange={onChange}
-              placeholder="City"
-            />
+            <label htmlFor="city">City</label>
+            <input type="text" name="city" value={city} onChange={onChange} />
           </div>
           <div>
+            <label htmlFor="stateOrProvince">State or province</label>
             <input
               type="text"
               name="stateOrProvince"
               value={stateOrProvince}
               onChange={onChange}
-              placeholder="State or province"
             />
           </div>
           <div>
+            <label htmlFor="country">Country</label>
             <input
               type="text"
               name="country"
               value={country}
               onChange={onChange}
-              placeholder="Country"
             />
           </div>
           <div>
+            <label htmlFor="pickUpInstruction">Pick up information</label>
             <textarea
               name="pickUpInstruction"
               value={pickUpInstruction}
@@ -205,6 +193,7 @@ const ContactForm = () => {
             />
           </div>
           <div>
+            <label htmlFor="deliveryInstruction">Delivery information</label>
             <textarea
               name="deliveryInstruction"
               value={deliveryInstruction}
@@ -214,6 +203,7 @@ const ContactForm = () => {
             />
           </div>
           <div>
+            <label htmlFor="notes">Notes</label>
             <textarea
               name="notes"
               value={notes}
@@ -222,12 +212,14 @@ const ContactForm = () => {
               onChange={onChange}
             />
           </div>
+          <div>
+            <input
+              type="submit"
+              className={styles.submitButton}
+              value={contactContext.selectedContact ? "Update" : "Add"}
+            />
+          </div>
         </div>
-        <input
-          type="submit"
-          className={styles.submitButton}
-          value={contactContext.selectedContact ? "Update" : "Add"}
-        />
       </form>
     </>
   );
