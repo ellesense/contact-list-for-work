@@ -54,10 +54,10 @@ const ContactItem = ({ contact }) => {
         {postalCode}
       </td>
       <td>{phone}</td>
-      <td>{pickUpInstruction}</td>
-      <td>{deliveryInstruction}</td>
-      <td>{email}</td>
-      <td>{notes}</td>
+      <td class={styles.pickUpInstruction}>{pickUpInstruction}</td>
+      <td class={styles.deliveryInstruction}>{deliveryInstruction}</td>
+      <td class={styles.email}>{email}</td>
+      <td class={styles.notes}>{notes}</td>
       <td>
         <button className={styles.deleteBtn} onClick={onDelete}>
           Delete

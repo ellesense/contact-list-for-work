@@ -7,6 +7,13 @@ td {
   padding: 8px;
 }
 
+.pickUpInstruction,
+.deliveryInstruction,
+.email,
+.notes {
+  white-space: pre-line;
+}
+
 .deleteBtn {
   margin: 2px;
   padding: 7px;

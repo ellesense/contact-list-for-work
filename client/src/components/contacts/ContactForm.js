@@ -142,12 +142,12 @@ const ContactForm = () => {
             />
           </div>
           <div>
-            <input
-              type="email"
+            <textarea
               name="email"
               value={email}
               onChange={onChange}
-              placeholder="Email"
+              rows={6}
+              cols={25}
             />
           </div>
           <div>
@@ -196,30 +196,30 @@ const ContactForm = () => {
             />
           </div>
           <div>
-            <input
-              type="text"
+            <textarea
               name="pickUpInstruction"
               value={pickUpInstruction}
               onChange={onChange}
-              placeholder="Pick up instruction"
+              rows={6}
+              cols={25}
             />
           </div>
           <div>
-            <input
-              type="text"
+            <textarea
               name="deliveryInstruction"
               value={deliveryInstruction}
               onChange={onChange}
-              placeholder="Delivery instruction"
+              rows={6}
+              cols={25}
             />
           </div>
           <div>
-            <input
-              type="text"
+            <textarea
               name="notes"
               value={notes}
+              rows={6}
+              cols={25}
               onChange={onChange}
-              placeholder="Notes"
             />
           </div>
         </div>
