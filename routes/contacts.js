@@ -31,6 +31,7 @@ router.post(
     }
 
     const {
+      businessTaxId,
       name,
       phone,
       email,
@@ -38,6 +39,7 @@ router.post(
       postalCode,
       city,
       stateOrProvince,
+      country,
       pickUpInstruction,
       deliveryInstruction,
       notes,
@@ -46,6 +48,7 @@ router.post(
     try {
       const newContact = new Contact({
         user: req.user.id,
+        businessTaxId,
         name,
         phone,
         email,
@@ -53,6 +56,7 @@ router.post(
         postalCode,
         city,
         stateOrProvince,
+        country,
         pickUpInstruction,
         deliveryInstruction,
         notes,
@@ -71,6 +75,7 @@ router.post(
 // Update an existing contact
 router.put("/:id", auth, async (req, res) => {
   const {
+    businessTaxId,
     name,
     phone,
     email,
@@ -78,6 +83,7 @@ router.put("/:id", auth, async (req, res) => {
     postalCode,
     city,
     stateOrProvince,
+    country,
     pickUpInstruction,
     deliveryInstruction,
     notes,
@@ -95,6 +101,7 @@ router.put("/:id", auth, async (req, res) => {
     }
 
     const contactFields = {
+      businessTaxId,
       name,
       phone,
       email,
@@ -102,6 +109,7 @@ router.put("/:id", auth, async (req, res) => {
       postalCode,
       city,
       stateOrProvince,
+      country,
       pickUpInstruction,
       deliveryInstruction,
       notes,

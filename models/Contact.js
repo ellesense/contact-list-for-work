@@ -5,6 +5,7 @@ const ContactSchema = mongoose.Schema({
     // collection name
     ref: "users",
   },
+  businessTaxId: { type: String },
   name: {
     type: String,
     required: true,
@@ -22,6 +23,9 @@ const ContactSchema = mongoose.Schema({
     type: String,
   },
   stateOrProvince: {
+    type: String,
+  },
+  country: {
     type: String,
   },
   email: {

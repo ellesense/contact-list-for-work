@@ -8,6 +8,7 @@ const ContactForm = () => {
   const alertContext = useContext(AlertContext);
 
   const [contact, setContact] = useState({
+    businessTaxId: "",
     name: "",
     email: "",
     phone: "",
@@ -15,6 +16,7 @@ const ContactForm = () => {
     postalCode: "",
     city: "",
     stateOrProvince: "",
+    country: "",
     pickUpInstruction: "",
     deliveryInstruction: "",
     notes: "",
@@ -26,6 +28,7 @@ const ContactForm = () => {
       setContact(contactContext.selectedContact);
     } else {
       setContact({
+        businessTaxId: "",
         name: "",
         email: "",
         phone: "",
@@ -33,6 +36,7 @@ const ContactForm = () => {
         postalCode: "",
         city: "",
         stateOrProvince: "",
+        country: "",
         pickUpInstruction: "",
         deliveryInstruction: "",
         notes: "",
@@ -59,6 +63,7 @@ const ContactForm = () => {
         // add contact
         contactContext.addContact(contact);
         setContact({
+          businessTaxId: "",
           name: "",
           email: "",
           phone: "",
@@ -66,6 +71,7 @@ const ContactForm = () => {
           postalCode: "",
           city: "",
           stateOrProvince: "",
+          country: "",
           pickUpInstruction: "",
           deliveryInstruction: "",
           notes: "",
@@ -79,6 +85,7 @@ const ContactForm = () => {
   };
 
   const {
+    businessTaxId,
     name,
     email,
     phone,
@@ -86,6 +93,7 @@ const ContactForm = () => {
     postalCode,
     city,
     stateOrProvince,
+    country,
     pickUpInstruction,
     deliveryInstruction,
     notes,
@@ -104,6 +112,15 @@ const ContactForm = () => {
               onChange={onChange}
               placeholder="Type"
               autoFocus
+            />
+          </div>
+          <div>
+            <input
+              type="text"
+              name="businessTaxId"
+              value={businessTaxId}
+              onChange={onChange}
+              placeholder="Business Tax ID"
             />
           </div>
           <div>
@@ -167,6 +184,15 @@ const ContactForm = () => {
               value={stateOrProvince}
               onChange={onChange}
               placeholder="State or province"
+            />
+          </div>
+          <div>
+            <input
+              type="text"
+              name="country"
+              value={country}
+              onChange={onChange}
+              placeholder="Country"
             />
           </div>
           <div>

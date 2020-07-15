@@ -20,12 +20,13 @@ const Contacts = () => {
           <thead>
             <tr>
               <th className={styles.type}>Type</th>
+              <th>Business Tax ID</th>
               <th className={styles.name}>Name</th>
               <th className={styles.address}>Address</th>
               <th className={styles.mainPhoneNumber}>Main phone number</th>
-              <th className={styles.pickUpInstruction}>Pick up instruction</th>
+              <th className={styles.pickUpInstruction}>Pick up information</th>
               <th className={styles.deliveryInstruction}>
-                Delivery instruction
+                Delivery Information
               </th>
               <th>Email</th>
               <th>Notes</th>

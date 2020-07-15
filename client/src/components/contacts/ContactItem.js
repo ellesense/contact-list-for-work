@@ -7,6 +7,7 @@ const ContactItem = ({ contact }) => {
 
   const {
     _id,
+    businessTaxId,
     name,
     phone,
     email,
@@ -14,6 +15,7 @@ const ContactItem = ({ contact }) => {
     postalCode,
     city,
     stateOrProvince,
+    country,
     pickUpInstruction,
     deliveryInstruction,
     notes,
@@ -36,6 +38,7 @@ const ContactItem = ({ contact }) => {
   return (
     <tr onClick={onShowDetail}>
       <td>{type.charAt(0).toUpperCase() + type.slice(1)}</td>
+      <td>{businessTaxId}</td>
       <td className={styles.organizationName}>
         {name.charAt(0).toUpperCase() + name.slice(1)}
       </td>
@@ -45,6 +48,10 @@ const ContactItem = ({ contact }) => {
         {city.charAt(0).toUpperCase() + city.slice(1)}
         <br />
         {stateOrProvince.charAt(0).toUpperCase() + stateOrProvince.slice(1)}
+        <br />
+        {country}
+        <br />
+        {postalCode}
       </td>
       <td>{phone}</td>
       <td>{pickUpInstruction}</td>
