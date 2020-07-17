@@ -22,14 +22,8 @@ const Contacts = () => {
               <th className={styles.type}>Type</th>
               <th>Business Tax ID</th>
               <th className={styles.name}>Name</th>
-              <th className={styles.address}>Address</th>
+              <th className={styles.address}>Country</th>
               <th className={styles.mainPhoneNumber}>Main phone number</th>
-              <th className={styles.pickUpInstruction}>Pick up information</th>
-              <th className={styles.deliveryInstruction}>
-                Delivery Information
-              </th>
-              <th>Email</th>
-              <th>Notes</th>
               <th className={styles.actions}>Actions</th>
             </tr>
           </thead>

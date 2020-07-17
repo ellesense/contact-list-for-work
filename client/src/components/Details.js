@@ -15,6 +15,7 @@ const Details = () => {
     city,
     stateOrProvince,
     pickUpInstruction,
+    country,
     deliveryInstruction,
     notes,
     type,
@@ -28,6 +29,7 @@ const Details = () => {
       ${address}
       ${city}
       ${stateOrProvince}
+      ${country}
       ${postalCode}
       ${pickUpInstruction}
       ${deliveryInstruction}
@@ -36,13 +38,21 @@ const Details = () => {
         <button>Copy to clipboard</button>
       </CopyToClipboard>
       <div>
+        <h3>{type}</h3>
         <p className={styles.name}>{name}</p>
         <p>{address}</p>
         <p>{city}</p>
         <p>{stateOrProvince}</p>
+        <p>{country}</p>
         <p>{postalCode}</p>
+        <p>Pick up information:</p>
         <p>{pickUpInstruction}</p>
+        <p>Delivery information:</p>
         <p>{deliveryInstruction}</p>
+        <p>Notes</p>
+        <p>{notes}</p>
+        <p>Emails</p>
+        <p>{email}</p>
       </div>
     </div>
   );

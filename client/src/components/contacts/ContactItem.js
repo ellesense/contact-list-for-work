@@ -42,22 +42,8 @@ const ContactItem = ({ contact }) => {
       <td className={styles.organizationName}>
         {name.charAt(0).toUpperCase() + name.slice(1)}
       </td>
-      <td>
-        {address}
-        <br />
-        {city.charAt(0).toUpperCase() + city.slice(1)}
-        <br />
-        {stateOrProvince.charAt(0).toUpperCase() + stateOrProvince.slice(1)}
-        <br />
-        {country}
-        <br />
-        {postalCode}
-      </td>
+      <td>{country}</td>
       <td>{phone}</td>
-      <td class={styles.pickUpInstruction}>{pickUpInstruction}</td>
-      <td class={styles.deliveryInstruction}>{deliveryInstruction}</td>
-      <td class={styles.email}>{email}</td>
-      <td class={styles.notes}>{notes}</td>
       <td>
         <button className={styles.deleteBtn} onClick={onDelete}>
           Delete

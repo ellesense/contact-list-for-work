@@ -22,9 +22,9 @@ const Home = () => {
           <ContactFilter />
           <ContactForm />
         </div>
-        {/* <div>
+        <div>
           <Details />
-        </div> */}
+        </div>
         <div>
           <Contacts />
         </div>
