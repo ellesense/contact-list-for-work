@@ -1,10 +1,20 @@
-.heading {
-  font-size: 0.9rem;
+.container {
+  padding: 30px;
+  margin-top: 5%;
+  margin-bottom: 20px;
+  background: #e3e6e8;
+  box-shadow: 20px 20px 60px #c1c4c5, -20px -20px 60px #ffffff;
 }
 
-.contactFilterForm {
-  width: 400px;
-  margin-top: 20px;
-  margin-bottom: 40px;
-  padding: 0 20px 0;
+.filterForm {
+  padding-right: 20px;
+  margin: 20px 0px;
+  border-radius: 25px;
+}
+
+.filterForm input {
+  border: none;
+  outline: none;
+  width: 100%;
+  padding: 10px;
 }

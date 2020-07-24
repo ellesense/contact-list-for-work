@@ -35,23 +35,28 @@ const Details = () => {
       ${deliveryInstruction}
       `}
       >
-        <button>Copy to clipboard</button>
+        <button className={styles.copyButton}>Copy to clipboard</button>
       </CopyToClipboard>
       <div>
-        <h3>{type}</h3>
+        <h4>Type: {type}</h4>
         <p className={styles.name}>{name}</p>
         <p>{address}</p>
-        <p>{city}</p>
-        <p>{stateOrProvince}</p>
-        <p>{country}</p>
-        <p>{postalCode}</p>
-        <p>Pick up information:</p>
+        <p>
+          {city ? city : "Unknown"},
+          {stateOrProvince ? stateOrProvince : "Unknown"},
+          {country ? country : "Unknown"}, {postalCode ? postalCode : "Uknown"}
+        </p>
+        <hr />
+        <h4>Pick up information:</h4>
         <p>{pickUpInstruction}</p>
-        <p>Delivery information:</p>
+        <hr />
+        <h4>Delivery information:</h4>
         <p>{deliveryInstruction}</p>
-        <p>Notes</p>
+        <hr />
+        <h4>Notes</h4>
         <p>{notes}</p>
-        <p>Emails</p>
+        <hr />
+        <h4>Emails</h4>
         <p>{email}</p>
       </div>
     </div>

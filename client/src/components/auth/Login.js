@@ -43,7 +43,7 @@ const Login = (props) => {
   return (
     <>
       <div className={styles.loginDiv}>
-        <h1>LOGIN</h1>
+        <h1>Login</h1>
         <form onSubmit={onSubmit} className={styles.loginForm}>
           <div>
             <label htmlFor="email">Email</label>

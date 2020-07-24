@@ -1,5 +1,6 @@
-* {
-  /* border: 1px red dashed; */
+html,
+body {
+  background-color: #e3e6e8;
 }
 
 body {
@@ -7,5 +8,5 @@ body {
 }
 
 .container {
-  padding: 25px;
+  padding: 25px 0px;
 }

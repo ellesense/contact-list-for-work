@@ -16,18 +16,14 @@ const Home = () => {
 
   return (
     <>
-      {/* <Analysis /> */}
       <div className={styles.home}>
-        <div>
-          <ContactFilter />
-          <ContactForm />
-        </div>
-        <div>
+        <section>
           <Details />
-        </div>
-        <div>
+        </section>
+        <section>
+          <ContactFilter />
           <Contacts />
-        </div>
+        </section>
       </div>
     </>
   );

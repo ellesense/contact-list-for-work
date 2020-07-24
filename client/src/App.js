@@ -25,7 +25,7 @@ function App() {
         <ContactState>
           <BrowserRouter>
             <>
-              <Navbar title="LOCO" />
+              <Navbar title="Logistics Contacts" />
               <div className={styles.container}>
                 <Alert />
                 <Switch>
