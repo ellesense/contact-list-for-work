@@ -1,12 +1,12 @@
 .details {
-  width: 550px;
-  line-height: 2rem;
-  padding: 10%;
-  margin: 10% 0%;
+  width: 450px;
+  line-height: 1.7rem;
+  padding: 30px;
   font-size: 0.9rem;
   background: #e3e6e8;
-  box-shadow: 20px 20px 60px #c1c4c5, -20px -20px 60px #ffffff;
+  box-shadow: 20px 20px 60px #c1c4c5;
   height: 100vh;
+  margin-top: 20px;
 }
 
 .copyButton {
@@ -20,4 +20,10 @@
 
 .name {
   font-size: 1.1rem;
+}
+
+hr {
+  width: 50%;
+  border: none;
+  margin: 15px auto;
 }

@@ -1,21 +1,29 @@
 .contactForm {
-  padding: 0 40px;
+  margin-bottom: 70px;
+}
+
+.inputsSection {
+  width: 80%;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin: auto;
+}
+
+.inputsSection div {
+  margin: 7px;
 }
 
 label {
   font-size: 0.8rem;
 }
 
-.contactForm input {
+.contactForm input[type="text"] {
   border-bottom: 1px solid #ccc;
   width: 100%;
   border-top: hidden;
   border-left: hidden;
   border-right: hidden;
   outline: none;
-  display: block;
   padding: 10px;
 }
 
@@ -25,16 +33,17 @@ label {
   border-left: hidden;
   border-right: hidden;
   outline: none;
-  display: block;
   padding: 10px;
   height: 60px;
 }
 
-.contactForm div {
-  width: 300px;
-}
-
 .submitButton {
   color: white;
+  padding: 10px;
+  outline: none;
+  border: none;
+  width: 100px;
+  margin: auto;
+  display: block;
   background-color: rgb(24, 42, 51);
 }

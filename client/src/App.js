@@ -25,17 +25,17 @@ function App() {
         <ContactState>
           <BrowserRouter>
             <>
-              <Navbar title="Logistics Contacts" />
-              <div className={styles.container}>
-                <div className={styles.alert}>
-                  <Alert />
-                </div>
-                <Switch>
-                  <PrivateRoute exact path="/" component={Home} />
-                  <Route exact path="/register" component={Register} />
-                  <Route exact path="/login" component={Login} />
-                </Switch>
+              <div className="navbar">
+                <Navbar title="Logistics Contacts" />
               </div>
+              <div className={styles.alert}>
+                <Alert />
+              </div>
+              <Switch>
+                <PrivateRoute exact path="/" component={Home} />
+                <Route exact path="/register" component={Register} />
+                <Route exact path="/login" component={Login} />
+              </Switch>
             </>
           </BrowserRouter>
         </ContactState>

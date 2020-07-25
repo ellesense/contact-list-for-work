@@ -18,26 +18,24 @@ const Home = () => {
   return (
     <>
       <main>
-        <div>
-          <button
-            className={styles.newContact}
-            onClick={() => {
-              showContactForm(!contactForm);
-            }}
-          >
-            New contact
-          </button>
-        </div>
+        <button
+          className={styles.showFormButton}
+          onClick={() => {
+            showContactForm(!contactForm);
+          }}
+        >
+          New Contact
+        </button>
         {contactForm ? (
           <section>
             <ContactForm />
           </section>
         ) : null}
-        <section className={styles.home}>
-          <div>
+        <section className={styles.contents}>
+          <div className={styles.details}>
             <Details />
           </div>
-          <div>
+          <div className={styles.contactsFilterAndTable}>
             <ContactFilter />
             <Contacts />
           </div>

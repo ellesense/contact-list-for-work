@@ -1,15 +1,29 @@
-.home {
-  display: flex;
-  justify-content: space-around;
+main {
+  padding: 10px 70px;
 }
 
-.newContact {
-  color: white;
-  background-color: rgb(24, 42, 51);
-  border-top: hidden;
-  border-left: hidden;
-  border-right: hidden;
-  outline: none;
+.contents {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "details contacts-filter-and-table"
+    "details contacts-filter-and-table";
+  /* margin-top: 20px; */
+}
+
+.details {
+  grid-area: details;
+}
+
+.contactsFilterAndTable {
+  grid-area: contacts-filter-and-table;
+}
+
+.showFormButton {
+  cursor: pointer;
   padding: 10px;
-  margin: 20px 40px;
+  border: none;
+  background-color: rgb(24, 42, 51);
+  color: white;
 }

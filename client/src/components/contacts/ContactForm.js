@@ -101,16 +101,9 @@ const ContactForm = () => {
   } = contact;
 
   return (
-    <>
-      <form onSubmit={onSubmit} className={styles.contactForm}>
-        <div className={styles.submitDiv}>
-          <input
-            type="submit"
-            className={styles.submitButton}
-            value={contactContext.selectedContact ? "Update" : "Add"}
-          />
-        </div>
-        <div className={styles.typeDiv}>
+    <form onSubmit={onSubmit} className={styles.contactForm}>
+      <section className={styles.inputsSection}>
+        <div>
           <label htmlFor="type">Type</label>
           <input
             type="text"
@@ -120,7 +113,7 @@ const ContactForm = () => {
             autoFocus
           />
         </div>
-        <div className={styles.businessTaxIdDiv}>
+        <div>
           <label htmlFor="businessTaxId">Business Tax ID</label>
           <input
             type="text"
@@ -129,15 +122,15 @@ const ContactForm = () => {
             onChange={onChange}
           />
         </div>
-        <div className={styles.nameDiv}>
+        <div>
           <label htmlFor="name">Name</label>
           <input type="text" name="name" value={name} onChange={onChange} />
         </div>
-        <div className={styles.phoneDiv}>
+        <div>
           <label htmlFor="phone">Main phone number</label>
           <input type="text" name="phone" value={phone} onChange={onChange} />
         </div>
-        <div className={styles.emailDiv}>
+        <div>
           <label htmlFor="email">Email(s)</label>
           <br />
           <textarea
@@ -146,46 +139,6 @@ const ContactForm = () => {
             onChange={onChange}
             rows={6}
             cols={25}
-          />
-        </div>
-        <div className={styles.addressDiv}>
-          <label htmlFor="address">Office address</label>
-          <input
-            type="text"
-            name="address"
-            value={address}
-            onChange={onChange}
-          />
-        </div>
-        <div className={styles.postalCodeDiv}>
-          <label htmlFor="postalCode">Postal code</label>
-          <input
-            type="text"
-            name="postalCode"
-            value={postalCode}
-            onChange={onChange}
-          />
-        </div>
-        <div className={styles.cityDiv}>
-          <label htmlFor="city">City</label>
-          <input type="text" name="city" value={city} onChange={onChange} />
-        </div>
-        <div className={styles.stateOrProvinceDiv}>
-          <label htmlFor="stateOrProvince">State or province</label>
-          <input
-            type="text"
-            name="stateOrProvince"
-            value={stateOrProvince}
-            onChange={onChange}
-          />
-        </div>
-        <div className={styles.countryDiv}>
-          <label htmlFor="country">Country</label>
-          <input
-            type="text"
-            name="country"
-            value={country}
-            onChange={onChange}
           />
         </div>
         <div>
@@ -218,8 +171,56 @@ const ContactForm = () => {
             onChange={onChange}
           />
         </div>
-      </form>
-    </>
+        <div>
+          <label htmlFor="address">Office address</label>
+          <input
+            type="text"
+            name="address"
+            value={address}
+            onChange={onChange}
+          />
+        </div>
+        <div>
+          <label htmlFor="postalCode">Postal code</label>
+          <input
+            type="text"
+            className={styles.postalCode}
+            name="postalCode"
+            value={postalCode}
+            onChange={onChange}
+          />
+        </div>
+        <div>
+          <label htmlFor="city">City</label>
+          <input type="text" name="city" value={city} onChange={onChange} />
+        </div>
+        <div>
+          <label htmlFor="stateOrProvince">State or province</label>
+          <input
+            type="text"
+            name="stateOrProvince"
+            value={stateOrProvince}
+            onChange={onChange}
+          />
+        </div>
+        <div>
+          <label htmlFor="country">Country</label>
+          <input
+            type="text"
+            name="country"
+            value={country}
+            onChange={onChange}
+          />
+        </div>
+      </section>
+      <div>
+        <input
+          type="submit"
+          className={styles.submitButton}
+          value={contactContext.selectedContact ? "Update" : "Add"}
+        />
+      </div>
+    </form>
   );
 };
 
