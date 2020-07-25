@@ -9,7 +9,6 @@ const Contacts = () => {
   const { contacts, filtered } = contactContext;
 
   useEffect(() => {
-    console.log("get all contacts");
     contactContext.getContacts();
   }, []);
 

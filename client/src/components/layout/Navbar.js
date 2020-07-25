@@ -45,7 +45,7 @@ const Navbar = ({ title }) => {
     <header>
       <h1 className={styles.heading}>{title}</h1>
       <nav>
-        <ul class={styles.navLinks}>
+        <ul className={styles.navLinks}>
           {authContext.isAuthenticated ? authLinks : nonAuthLinks}
         </ul>
       </nav>

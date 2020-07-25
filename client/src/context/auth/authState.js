@@ -26,12 +26,10 @@ const AuthState = (props) => {
 
   const startLoading = () => {
     dispatch({ type: "START_LOADING" });
-    console.log("loading started");
   };
 
   const endLoading = () => {
     dispatch({ type: "END_LOADING" });
-    console.log("loading ended");
   };
 
   // Load user
@@ -59,7 +57,6 @@ const AuthState = (props) => {
   // Register user
   const registerUser = async (formData) => {
     const config = { headers: { "Content-Type": "application/json" } };
-    console.log("From authState.js: registerUser()");
     try {
       const res = await axios.post("/api/users", formData, config);
       dispatch({
@@ -68,7 +65,6 @@ const AuthState = (props) => {
       });
       loadUser();
     } catch (err) {
-      console.log("From authState.js: catch() -", err.response.data.msg);
       dispatch({
         type: REGISTER_FAIL,
         payload: err.response.data.msg,
@@ -84,10 +80,6 @@ const AuthState = (props) => {
       dispatch({ type: LOGIN_SUCCESS, payload: res.data });
       loadUser();
     } catch (err) {
-      console.log(
-        "From authState.js: loginUser() catch() - ",
-        err.response.data.msg
-      );
       dispatch({ type: LOGIN_FAIL, payload: err.response.data.msg });
     }
   };

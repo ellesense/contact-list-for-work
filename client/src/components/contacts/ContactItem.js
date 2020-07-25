@@ -5,22 +5,7 @@ import styles from "./ContactItem.module.css";
 const ContactItem = ({ contact }) => {
   const contactContext = useContext(ContactContext);
 
-  const {
-    _id,
-    businessTaxId,
-    name,
-    phone,
-    email,
-    address,
-    postalCode,
-    city,
-    stateOrProvince,
-    country,
-    pickUpInstruction,
-    deliveryInstruction,
-    notes,
-    type,
-  } = contact;
+  const { _id, type, businessTaxId, name, phone, country } = contact;
 
   const onDelete = () => {
     alert("Are you sure?");

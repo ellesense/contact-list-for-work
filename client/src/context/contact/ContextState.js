@@ -21,7 +21,6 @@ const ContactState = (props) => {
     filtered: null,
     error: null,
     contactDetail: {},
-    showForm: false,
   };
 
   const [state, dispatch] = useReducer(contactReducer, initState);
@@ -66,7 +65,6 @@ const ContactState = (props) => {
 
   // Select contact to update
   const selectContact = (contact) => {
-    console.log(contact);
     dispatch({
       type: SELECT_CONTACT,
       payload: contact,
@@ -96,8 +94,6 @@ const ContactState = (props) => {
 
   // Filter the contacts
   const filterContacts = (text) => {
-    console.log("From ContextState - text: ", text);
-    console.log("From ContextState - state.filter: ", state.filtered);
     dispatch({ type: FILTER_CONTACTS, payload: text });
   };
 

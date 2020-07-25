@@ -13,7 +13,6 @@ const AlertState = (props) => {
 
   // Set alert
   const setAlert = (msg) => {
-    console.log("From alertState.js: setAlert() - ", msg);
     dispatch({
       type: SET_ALERT,
       payload: msg,

@@ -39,7 +39,6 @@ export default (state, action) => {
       return {
         ...state,
         selectedContact: null,
-        showForm: true,
         contacts: state.contacts.map((contact) => {
           return contact._id === action.payload._id ? action.payload : contact;
         }),

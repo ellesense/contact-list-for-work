@@ -11,7 +11,7 @@ const ContactFilter = () => {
     if (contactContext.filtered === null) {
       setText("");
     }
-  });
+  }, []);
 
   const onChange = (e) => {
     setText(e.target.value);
