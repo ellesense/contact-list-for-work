@@ -81,7 +81,11 @@ const Register = (props) => {
               onChange={onChange}
             />
           </div>
-          <input type="submit" value="Register" />
+          <input
+            className={styles.registerButton}
+            type="submit"
+            value="Register"
+          />
         </form>
       </div>
     </>

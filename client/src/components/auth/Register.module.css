@@ -1,9 +1,10 @@
 .registerDiv {
-  margin: 50px auto;
-  width: 300px;
-  background-color: #f5f5f5;
+  padding: 50px 20px 10px 20px;
+  margin: 150px auto;
+  width: 500px;
+  background: #e3e6e8;
+  box-shadow: 20px 20px 60px #c1c4c5, -20px -20px 60px #ffffff;
   color: rgb(24, 42, 51);
-  padding: 60px;
 }
 
 .registerDiv h1 {
@@ -11,10 +12,19 @@
 }
 
 .registerForm {
-  width: 100%;
+  padding: 50px;
 }
 
 .registerForm input {
   border: none;
+  width: 100%;
   outline: none;
+  display: block;
+  margin: 10px 0px;
+  padding: 10px;
+}
+
+.registerButton {
+  background-color: rgb(24, 42, 51);
+  color: white;
 }

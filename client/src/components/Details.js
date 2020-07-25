@@ -24,16 +24,8 @@ const Details = () => {
   return (
     <div className={styles.details}>
       <CopyToClipboard
-        text={`
-      ${name}
-      ${address}
-      ${city}
-      ${stateOrProvince}
-      ${country}
-      ${postalCode}
-      ${pickUpInstruction}
-      ${deliveryInstruction}
-      `}
+        text={`${name}
+        ${address}, ${city}, ${stateOrProvince}, ${country}, ${postalCode}`}
       >
         <button className={styles.copyButton}>Copy to clipboard</button>
       </CopyToClipboard>
@@ -42,15 +34,15 @@ const Details = () => {
         <p className={styles.name}>{name}</p>
         <p>{address}</p>
         <p>
-          {city ? city : "Unknown"},
-          {stateOrProvince ? stateOrProvince : "Unknown"},
+          {city ? city : "Unknown"},{" "}
+          {stateOrProvince ? stateOrProvince : "Unknown"},{" "}
           {country ? country : "Unknown"}, {postalCode ? postalCode : "Uknown"}
         </p>
         <hr />
-        <h4>Pick up information:</h4>
+        <h4>Pick up information</h4>
         <p>{pickUpInstruction}</p>
         <hr />
-        <h4>Delivery information:</h4>
+        <h4>Delivery information</h4>
         <p>{deliveryInstruction}</p>
         <hr />
         <h4>Notes</h4>

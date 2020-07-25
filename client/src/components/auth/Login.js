@@ -64,7 +64,7 @@ const Login = (props) => {
               onChange={onChange}
             />
           </div>
-          <input type="submit" value="Login" />
+          <input className={styles.loginButton} type="submit" value="Login" />
         </form>
       </div>
     </>

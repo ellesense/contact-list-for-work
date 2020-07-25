@@ -23,3 +23,8 @@
   margin: 10px 0px;
   padding: 10px;
 }
+
+.loginButton {
+  background-color: rgb(24, 42, 51);
+  color: white;
+}

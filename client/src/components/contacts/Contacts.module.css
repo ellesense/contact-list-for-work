@@ -17,3 +17,7 @@ td {
   border: none;
   padding: 8px;
 }
+
+tbody {
+  cursor: pointer;
+}
