@@ -20,7 +20,11 @@ export default (state, action) => {
         contactDetail: action.payload,
       };
     case ADD_CONTACT:
-      return { ...state, contacts: [action.payload, ...state.contacts] };
+      return {
+        ...state,
+        contacts: [action.payload, ...state.contacts],
+        showForm: false,
+      };
     case ADD_CONTACT_ERROR:
       return { ...state, error: action.payload };
     case DELETE_CONTACT:
@@ -35,6 +39,7 @@ export default (state, action) => {
       return {
         ...state,
         selectedContact: null,
+        showForm: true,
         contacts: state.contacts.map((contact) => {
           return contact._id === action.payload._id ? action.payload : contact;
         }),

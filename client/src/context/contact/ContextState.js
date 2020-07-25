@@ -21,6 +21,7 @@ const ContactState = (props) => {
     filtered: null,
     error: null,
     contactDetail: {},
+    showForm: false,
   };
 
   const [state, dispatch] = useReducer(contactReducer, initState);

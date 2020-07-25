@@ -13,24 +13,12 @@ const Home = () => {
     authContext.loadUser();
   }, []);
 
-  const [contactForm, showContactForm] = useState(false);
-
   return (
     <>
       <main>
-        <button
-          className={styles.showFormButton}
-          onClick={() => {
-            showContactForm(!contactForm);
-          }}
-        >
-          New Contact
-        </button>
-        {contactForm ? (
-          <section>
-            <ContactForm />
-          </section>
-        ) : null}
+        <section>
+          <ContactForm />
+        </section>
         <section className={styles.contents}>
           <div className={styles.details}>
             <Details />
