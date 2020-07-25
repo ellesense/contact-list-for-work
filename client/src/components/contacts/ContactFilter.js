@@ -31,13 +31,7 @@ const ContactFilter = () => {
       <form onSubmit={onSubmit} className={styles.container}>
         <label htmlFor="text">Filter by name or email</label>
         <div className={styles.filterForm}>
-          <input
-            type="text"
-            name="text"
-            value={text}
-            onChange={onChange}
-            autoFocus
-          />
+          <input type="text" name="text" value={text} onChange={onChange} />
         </div>
       </form>
     </>

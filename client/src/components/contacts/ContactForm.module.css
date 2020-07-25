@@ -1,52 +1,40 @@
 .contactForm {
-  width: 400px;
-  padding: 0 20px 0;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 label {
   font-size: 0.8rem;
 }
 
-/* input[type="text"],
-input[type="email"],
-input[type="password"],
-select {
-  width: 100%;
-  padding: 8px 5px;
-  margin: 8px 0;
-  display: inline-block;
+.contactForm input {
   border-bottom: 1px solid #ccc;
+  width: 100%;
   border-top: hidden;
   border-left: hidden;
   border-right: hidden;
   outline: none;
-  box-sizing: border-box;
+  display: block;
+  padding: 10px;
 }
 
-textarea {
-  border-top: none;
-  width: 400px;
-  border-right: none;
-  border-left: none;
+.contactForm textarea {
+  border-top: hidden;
+  width: 100%;
+  border-left: hidden;
+  border-right: hidden;
   outline: none;
-} */
-
-/* input[type="submit"] {
-  width: 400px;
-  background-color: rgb(24, 42, 51);
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-} */
-
-/* input[type="submit"]:hover {
-  background-color: rgb(46, 76, 92);
+  display: block;
+  padding: 10px;
+  height: 60px;
 }
- */
 
 .contactForm div {
-  width: 400px;
+  width: 300px;
+}
+
+.submitButton {
+  color: white;
+  background-color: rgb(24, 42, 51);
 }

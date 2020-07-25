@@ -1,6 +1,5 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import AuthContext from "../../context/auth/authContext";
-// import Analysis from "../Analysis";
 import Contacts from "../contacts/Contacts";
 import ContactForm from "../contacts/ContactForm";
 import Details from "../Details";
@@ -14,17 +13,36 @@ const Home = () => {
     authContext.loadUser();
   }, []);
 
+  const [contactForm, showContactForm] = useState(false);
+
   return (
     <>
-      <div className={styles.home}>
-        <section>
-          <Details />
+      <main>
+        <div>
+          <button
+            className={styles.newContact}
+            onClick={() => {
+              showContactForm(!contactForm);
+            }}
+          >
+            New contact
+          </button>
+        </div>
+        {contactForm ? (
+          <section>
+            <ContactForm />
+          </section>
+        ) : null}
+        <section className={styles.home}>
+          <div>
+            <Details />
+          </div>
+          <div>
+            <ContactFilter />
+            <Contacts />
+          </div>
         </section>
-        <section>
-          <ContactFilter />
-          <Contacts />
-        </section>
-      </div>
+      </main>
     </>
   );
 };

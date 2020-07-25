@@ -27,7 +27,9 @@ function App() {
             <>
               <Navbar title="Logistics Contacts" />
               <div className={styles.container}>
-                <Alert />
+                <div className={styles.alert}>
+                  <Alert />
+                </div>
                 <Switch>
                   <PrivateRoute exact path="/" component={Home} />
                   <Route exact path="/register" component={Register} />

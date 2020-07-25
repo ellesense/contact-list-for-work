@@ -2,3 +2,14 @@
   display: flex;
   justify-content: space-around;
 }
+
+.newContact {
+  color: white;
+  background-color: rgb(24, 42, 51);
+  border-top: hidden;
+  border-left: hidden;
+  border-right: hidden;
+  outline: none;
+  padding: 10px;
+  margin: 20px 40px;
+}

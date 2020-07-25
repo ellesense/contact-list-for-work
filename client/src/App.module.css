@@ -10,3 +10,11 @@ body {
 .container {
   padding: 25px 0px;
 }
+
+.alert {
+  margin: 10px auto;
+  /* border: 1px solid red; */
+  color: red;
+  width: 300px;
+  text-align: center;
+}

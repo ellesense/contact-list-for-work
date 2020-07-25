@@ -54,7 +54,13 @@ const Register = (props) => {
         <form onSubmit={onSubmit} className={styles.registerForm}>
           <div>
             <label htmlFor="name">Name</label>
-            <input type="text" name="name" id="name" onChange={onChange} />
+            <input
+              type="text"
+              name="name"
+              id="name"
+              onChange={onChange}
+              autoFocus
+            />
           </div>
 
           <div>

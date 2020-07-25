@@ -4,11 +4,7 @@ import styles from "./Alert.module.css";
 
 const Alert = () => {
   const alertContext = useContext(AlertContext);
-  return (
-    <div className={styles.alert}>
-      {alertContext.showAlert ? alertContext.msg : null}
-    </div>
-  );
+  return <>{alertContext.showAlert ? alertContext.msg : null}</>;
 };
 
 export default Alert;
